@@ -231,8 +231,15 @@
       grid-template-columns: repeat(12, 1fr);
       gap:14px;
       margin-top:14px;
+display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:14px;
     }
     .ph{
+      flex:0 0 280px;
+      scroll-snap-align:start;
+
       grid-column: span 4;
       height: 220px;
       border-radius: 16px;
@@ -357,6 +364,71 @@
       *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
       header{ background-size:auto; }
     }
+
+    .galleryGrid::-webkit-scrollbar{
+      height:8px;
+    }
+    .galleryGrid::-webkit-scrollbar-thumb{
+      background:rgba(0,0,0,.25);
+      border-radius:8px;
+    }
+    [data-theme="dark"] .galleryGrid::-webkit-scrollbar-thumb{
+      background:rgba(255,255,255,.25);
+    }
+
+    /* ========= SERVICES CAPTION OVERLAY (HOVER / TAP) ========= */
+    .ph{ position:relative; overflow:hidden; }
+
+    .cap{
+      position:absolute;
+      left:0; right:0; bottom:0;
+      padding:14px 14px 16px;
+
+      color:#fff;
+      font-weight:900;
+      font-size:1.05rem;
+      line-height:1.25;
+
+      background: linear-gradient(
+        180deg,
+        rgba(13,71,161,0),
+        rgba(13,71,161,.75),
+        rgba(106,27,154,.90)
+      );
+      backdrop-filter: blur(6px);
+
+      transform: translateY(100%);
+      opacity:0;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .cap small{
+      display:block;
+      margin-top:6px;
+      font-weight:800;
+      opacity:.9;
+      font-size:.85rem;
+    }
+
+    /* Desktop hover */
+    .ph:hover .cap{
+      transform: translateY(0);
+      opacity:1;
+    }
+
+    /* Mobile tap / keyboard focus */
+    .ph:focus-within .cap{
+      transform: translateY(0);
+      opacity:1;
+    }
+
+    .ph img{ cursor:pointer; }
+
+
+    /* Remove empty service cards (prevents blank boxes) */
+    .ph:not(:has(img)){
+      display:none !important;
+    }
   </style>
 </head>
 
@@ -380,8 +452,8 @@
       ஸ்ரீ அங்காளம்மன் துணை
     </h2>
 
-    <div class="sub" data-ta="Er. E. நம்பசிவம் M.E.," data-en="Er. E. Nambasivam, M.E.,">
-      Er. E. நம்பசிவம் M.E.,
+    <div class="sub" data-ta="Er. E. நல்லசிவம் M.E.," data-en="Er. E. Nallasivam, M.E.,">
+      Er. E. நல்லசிவம் M.E.,
     </div>
 
     <h1
@@ -419,15 +491,121 @@
     </div>
   </section>
 
-    <!-- Gallery -->
+  <!-- Gallery -->
   <section>
     <div class="card gallery">
-      <h3 data-ta="📸 மையத்தின் புகைப்படங்கள்" data-en="📸 Center Photos">📸 மையத்தின் புகைப்படங்கள்</h3>
+      <h3 data-ta="🦶 சேவைகள்" data-en="🦶 Services">🦶 சேவைகள்</h3>
 
       <div class="galleryGrid">
-        <div class="ph"><img src="assets/images/center1.jpg" alt="Center photo 1" loading="lazy"></div>
-        <div class="ph"><img src="assets/images/center2.jpg" alt="Center photo 2" loading="lazy"></div>
-        <div class="ph"><img src="assets/images/center3.jpg" alt="Center photo 3" loading="lazy"></div>
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service1.jpg" alt="குழந்தை பாக்கியம் பெற!" loading="lazy">
+          <div class="cap" data-ta="குழந்தை பாக்கியம் பெற!" data-en="Baby Blessing">
+            குழந்தை பாக்கியம் பெற!
+            <small data-ta="சீரான வளர்ச்சி &amp; நலம்" data-en="Healthy growth &amp; wellness">சீரான வளர்ச்சி &amp; நலம்</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service2.jpg" alt="கருப்பை பிரச்சனைகள் நீங்க!" loading="lazy">
+          <div class="cap" data-ta="கருப்பை பிரச்சனைகள் நீங்க!" data-en="Uterus Support">
+            கருப்பை பிரச்சனைகள் நீங்க!
+            <small data-ta="கருப்பை/ஹார்மோன் ஆதரவு" data-en="Uterus &amp; hormone support">கருப்பை/ஹார்மோன் ஆதரவு</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service3.jpg" alt="நன்றாக தூக்கம் வர!" loading="lazy">
+          <div class="cap" data-ta="நன்றாக தூக்கம் வர!" data-en="Better Sleep">
+            நன்றாக தூக்கம் வர!
+            <small data-ta="தளர்வு &amp; நல்ல நித்திரை" data-en="Relaxation &amp; better sleep">தளர்வு &amp; நல்ல நித்திரை</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service4.jpg" alt="சிறுநீர்க்கல்" loading="lazy">
+          <div class="cap" data-ta="சிறுநீர்க்கல்" data-en="urinary stone">
+            மன அழுத்த குறைப்பு
+            <small data-ta="சோர்வு குறைப்பு" data-en="Reduce fatigue">சோர்வு குறைப்பு</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service5.jpg" alt="சொட்டு மூத்திரம்" loading="lazy">
+          <div class="cap" data-ta="சொட்டு மூத்திரம்" data-en="Dripping Urine">
+            சொட்டு மூத்திரம்
+            <small data-ta="உடல் புத்துணர்வு" data-en="Body rejuvenation">உடல் புத்துணர்வு</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service6.jpg" alt="வயிற்றுவலி" loading="lazy">
+          <div class="cap" data-ta="வயிற்றுவலி" data-en="Stomach Pain">
+            முழு உடல் புத்துணர்வு
+            <small data-ta="நலம் பராமரிப்பு" data-en="Wellness care">நலம் பராமரிப்பு</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service7.jpg" alt="முதுகு &amp; கழுத்து வலி தணிவு" loading="lazy">
+          <div class="cap" data-ta="முதுகு &amp; கழுத்து வலி தணிவு" data-en="Back &amp; Neck">
+            முதுகு &amp; கழுத்து வலி தணிவு
+            <small data-ta="இறுக்கம் குறைப்பு" data-en="Ease stiffness">இறுக்கம் குறைப்பு</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service8.jpg" alt="மூட்டு வலி தணிவு" loading="lazy">
+          <div class="cap" data-ta="மூட்டு வலி தணிவு" data-en="Joint Comfort">
+            மூட்டு வலி தணிவு
+            <small data-ta="நடமாட்ட தளர்வு" data-en="Movement comfort">நடமாட்ட தளர்வு</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service9.jpg" alt="தலைவலி / மைக்ரேன் நிவாரணம்" loading="lazy">
+          <div class="cap" data-ta="தலைவலி / மைக்ரேன் நிவாரணம்" data-en="Headache Support">
+            தலைவலி / மைக்ரேன் நிவாரணம்
+            <small data-ta="மன அமைதி" data-en="Mental calm">மன அமைதி</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service10.jpg" alt="நரம்பு மண்டலம் சீராக்கம்" loading="lazy">
+          <div class="cap" data-ta="நரம்பு மண்டலம் சீராக்கம்" data-en="Nervous System">
+            நரம்பு மண்டலம் சீராக்கம்
+            <small data-ta="சீரான செயல்பாடு" data-en="Balanced function">சீரான செயல்பாடு</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service11.jpg" alt="தைராய்டு" loading="lazy">
+          <div class="cap" data-ta="தைராய்டு" data-en="thyroid">
+            ஜீரணம் மேம்பாடு
+            <small data-ta="உடல் சமநிலை" data-en="Body balance">உடல் சமநிலை</small>
+          </div>
+        </div>
+
+
+        <div class="ph" tabindex="0">
+          <img src="assets/images/service12.jpg" alt="பாத எரிச்சல்" loading="lazy">
+          <div class="cap" data-ta="பாத எரிச்சல்" data-en="Foot Burning">
+            நாள் தோறும் உடல் பராமரிப்பு
+            <small data-ta="நலம் பராமரிப்பு" data-en="Wellness care">நலம் பராமரிப்பு</small>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </section>
@@ -447,16 +625,10 @@
           <li data-ta="உறக்கம் மற்றும் தளர்வை மேம்படுத்த உதவும்" data-en="Supports better sleep and relaxation">உறக்கம் மற்றும் தளர்வை மேம்படுத்த உதவும்</li>
           <li data-ta="உடல் புத்துணர்வு மற்றும் நல பராமரிப்பிற்கு உதவும்" data-en="Supports overall wellness and rejuvenation">உடல் புத்துணர்வு மற்றும் நல பராமரிப்பிற்கு உதவும்</li>
         </ul>
-
-        <div class="pillRow">
-          <span class="pill" data-ta="✅ நல பராமரிப்பு" data-en="✅ Wellness Care">✅ நல பராமரிப்பு</span>
-          <span class="pill" data-ta="✅ தளர்வு" data-en="✅ Relaxation">✅ தளர்வு</span>
-          <span class="pill" data-ta="✅ புத்துணர்வு" data-en="✅ Rejuvenation">✅ புத்துணர்வு</span>
-        </div>
       </div>
 
       <div class="card services">
-        <h3 data-ta="🧾 சேவைகள் • கட்டணம் • நேரம்" data-en="🧾 Services • Price • Timing">
+        <h3 data-ta="🧾 சேவைகள் நேரம் & கட்டணம் " data-en="🧾 Services  Timing & Price ">
           🧾 சேவைகள் • கட்டணம் • நேரம்
         </h3>
 
@@ -464,11 +636,11 @@
           <li data-ta="சேவை: பாத அழுத்த புத்துணர்வு சிகிச்சை" data-en="Service: Foot Reflexology Rejuvenation Therapy">சேவை: பாத அழுத்த புத்துணர்வு சிகிச்சை</li>
           <li data-ta="நேரம்: 30 / 45 / 60 நிமிடங்கள்" data-en="Duration: 30 / 45 / 60 minutes">நேரம்: 30 / 45 / 60 நிமிடங்கள்</li>
           <li data-ta="முன்பதிவு: WhatsApp மூலம்" data-en="Booking: via WhatsApp">முன்பதிவு: WhatsApp மூலம்</li>
-          <li data-ta="கட்டணம்: (உங்கள் விலை சேர்க்கவும்)" data-en="Price: (Add your price)">கட்டணம்: (உங்கள் விலை சேர்க்கவும்)</li>
-          <li data-ta="நேரங்கள்: காலை/மாலை (உங்கள் நேரம் சேர்க்கவும்)" data-en="Timings: Morning/Evening (Add your timings)">நேரங்கள்: காலை/மாலை (உங்கள் நேரம் சேர்க்கவும்)</li>
+          <li data-ta="கட்டணம்: RS 200" data-en="Price: RS 200">கட்டணம்: </li>
+          <li data-ta="நேரங்கள்: காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை" data-en="Timings: 7.00 A.M TO 12.00 PM  ">நேரங்கள்: காலை/மாலை (உங்கள் நேரம் சேர்க்கவும்)</li>
         </ul>
 
-        </div>
+      </div>
     </div>
   </section>
 
@@ -477,7 +649,6 @@
     <div class="card">
       <h3 data-ta="ℹ️ முன்பதிவு குறிப்பு" data-en="ℹ️ Appointment Note">ℹ️ முன்பதிவு குறிப்பு</h3>
 
-      <!-- ✅ FIXED: Removed broken attribute quotes and invalid <br/> inside attributes -->
       <div style="text-align:center; line-height:1.9; font-size:1.06rem;">
         <p
           style="margin:0"
@@ -489,7 +660,6 @@
       </div>
     </div>
 
-    <!-- ✅ Exact Map -->
     <div class="map" style="margin-top:18px;">
       <iframe
         src="https://www.google.com/maps?q=11.438442,77.518272&z=17&output=embed"
