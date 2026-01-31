@@ -429,6 +429,170 @@ display:grid;
     .ph:not(:has(img)){
       display:none !important;
     }
+  
+    /* ========= REVEAL ANIMATION (for sections) ========= */
+    .reveal{
+      opacity:0;
+      transform: translateY(14px);
+      transition: opacity .55s ease, transform .55s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.in{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* ========= GOOGLE REVIEWS (Card + Auto Scroll) ========= */
+    .reviewsBox{
+      margin-top:14px;
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:0 12px 26px var(--shadow);
+      background: linear-gradient(135deg, rgba(13,71,161,.08), rgba(106,27,154,.06));
+    }
+
+    .reviewsHeader{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+
+    .gBadge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color:#111;
+      font-weight:900;
+      box-shadow:0 10px 22px rgba(0,0,0,.14);
+    }
+    [data-theme="dark"] .gBadge{
+      background: rgba(20,26,46,.72);
+      color: var(--text);
+      box-shadow:0 10px 22px rgba(0,0,0,.40);
+    }
+    .gBadge .stars{ letter-spacing:1px; }
+
+    .reviewsMarquee{
+      --gap:14px;
+      display:flex;
+      gap: var(--gap);
+      overflow:hidden;
+      padding:16px;
+      position:relative;
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .reviewsTrack{
+      display:flex;
+      gap: var(--gap);
+      align-items:stretch;
+      flex-wrap:nowrap;
+      min-width:max-content;
+      animation: scrollX 32s linear infinite;
+    }
+
+    .reviewsMarquee:hover .reviewsTrack{
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollX{
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .reviewCard{
+      width: 320px;
+      max-width: 78vw;
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px 16px 14px;
+      box-shadow:0 12px 26px var(--shadow);
+      position:relative;
+    }
+
+    .reviewTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .avatar{
+      width:36px; height:36px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      background: linear-gradient(135deg, rgba(13,71,161,.22), rgba(106,27,154,.22));
+      border:1px solid var(--line);
+      flex:0 0 auto;
+    }
+    .who{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .name{
+      font-weight:900;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width: 190px;
+    }
+    .miniStars{
+      font-weight:900;
+      color: #fbc02d;
+      text-shadow: 0 6px 14px rgba(0,0,0,.18);
+      white-space:nowrap;
+    }
+    .reviewText{
+      margin:0;
+      line-height:1.7;
+      font-weight:700;
+      color: var(--muted);
+    }
+
+    .reviewsActions{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .ghostBtn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.70);
+      color: var(--text);
+      font-weight:900;
+      text-decoration:none;
+      box-shadow:0 10px 22px rgba(0,0,0,.12);
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    [data-theme="dark"] .ghostBtn{ background: rgba(20,26,46,.70); box-shadow:0 10px 22px rgba(0,0,0,.40); }
+    .ghostBtn:hover{ opacity:.95; transform: translateY(-1px); }
+    .ghostBtn:active{ transform: translateY(0) scale(.99); }
+
+    @media (prefers-reduced-motion: reduce){
+      .reviewsTrack{ animation:none !important; }
+      .reviewsMarquee{ overflow:auto; mask-image:none; -webkit-mask-image:none; scroll-snap-type:x mandatory; }
+      .reviewCard{ scroll-snap-align:start; }
+    }
+
   </style>
 </head>
 
@@ -506,7 +670,6 @@ display:grid;
           </div>
         </div>
 
-
         <div class="ph" tabindex="0">
           <img src="assets/images/service2.jpg" alt="கருப்பை பிரச்சனைகள் நீங்க!" loading="lazy">
           <div class="cap" data-ta="கருப்பை பிரச்சனைகள் நீங்க!" data-en="Uterus Support">
@@ -514,7 +677,6 @@ display:grid;
             <small data-ta="கருப்பை/ஹார்மோன் ஆதரவு" data-en="Uterus &amp; hormone support">கருப்பை/ஹார்மோன் ஆதரவு</small>
           </div>
         </div>
-
 
         <div class="ph" tabindex="0">
           <img src="assets/images/service3.jpg" alt="நன்றாக தூக்கம் வர!" loading="lazy">
@@ -524,7 +686,6 @@ display:grid;
           </div>
         </div>
 
-
         <div class="ph" tabindex="0">
           <img src="assets/images/service4.jpg" alt="சிறுநீர்க்கல்" loading="lazy">
           <div class="cap" data-ta="சிறுநீர்க்கல்" data-en="urinary stone">
@@ -532,7 +693,6 @@ display:grid;
             <small data-ta="சோர்வு குறைப்பு" data-en="Reduce fatigue">சோர்வு குறைப்பு</small>
           </div>
         </div>
-
 
         <div class="ph" tabindex="0">
           <img src="assets/images/service5.jpg" alt="சொட்டு மூத்திரம்" loading="lazy">
@@ -542,7 +702,6 @@ display:grid;
           </div>
         </div>
 
-
         <div class="ph" tabindex="0">
           <img src="assets/images/service6.jpg" alt="வயிற்றுவலி" loading="lazy">
           <div class="cap" data-ta="வயிற்றுவலி" data-en="Stomach Pain">
@@ -550,7 +709,6 @@ display:grid;
             <small data-ta="நலம் பராமரிப்பு" data-en="Wellness care">நலம் பராமரிப்பு</small>
           </div>
         </div>
-
 
         <div class="ph" tabindex="0">
           <img src="assets/images/service7.jpg" alt="முதுகு &amp; கழுத்து வலி தணிவு" loading="lazy">
@@ -560,7 +718,6 @@ display:grid;
           </div>
         </div>
 
-
         <div class="ph" tabindex="0">
           <img src="assets/images/service8.jpg" alt="மூட்டு வலி தணிவு" loading="lazy">
           <div class="cap" data-ta="மூட்டு வலி தணிவு" data-en="Joint Comfort">
@@ -568,7 +725,6 @@ display:grid;
             <small data-ta="நடமாட்ட தளர்வு" data-en="Movement comfort">நடமாட்ட தளர்வு</small>
           </div>
         </div>
-
 
         <div class="ph" tabindex="0">
           <img src="assets/images/service9.jpg" alt="தலைவலி / மைக்ரேன் நிவாரணம்" loading="lazy">
@@ -578,7 +734,6 @@ display:grid;
           </div>
         </div>
 
-
         <div class="ph" tabindex="0">
           <img src="assets/images/service10.jpg" alt="நரம்பு மண்டலம் சீராக்கம்" loading="lazy">
           <div class="cap" data-ta="நரம்பு மண்டலம் சீராக்கம்" data-en="Nervous System">
@@ -586,7 +741,6 @@ display:grid;
             <small data-ta="சீரான செயல்பாடு" data-en="Balanced function">சீரான செயல்பாடு</small>
           </div>
         </div>
-
 
         <div class="ph" tabindex="0">
           <img src="assets/images/service11.jpg" alt="தைராய்டு" loading="lazy">
@@ -596,7 +750,6 @@ display:grid;
           </div>
         </div>
 
-
         <div class="ph" tabindex="0">
           <img src="assets/images/service12.jpg" alt="பாத எரிச்சல்" loading="lazy">
           <div class="cap" data-ta="பாத எரிச்சல்" data-en="Foot Burning">
@@ -604,7 +757,6 @@ display:grid;
             <small data-ta="நலம் பராமரிப்பு" data-en="Wellness care">நலம் பராமரிப்பு</small>
           </div>
         </div>
-
 
       </div>
     </div>
@@ -660,19 +812,221 @@ display:grid;
       </div>
     </div>
 
-    <div class="map" style="margin-top:18px;">
-      <iframe
-        src="https://www.google.com/maps?q=11.438442,77.518272&z=17&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        aria-label="Google map location">
-      </iframe>
+         </a>
     </div>
+  </section>
 
-    <div class="dirBtnWrap">
-      <a class="dirBtn" href="https://www.google.com/maps?q=11.438442,77.518272" target="_blank" rel="noopener">
-        📍 <span data-ta="திசைகள் பெற" data-en="Get Directions">திசைகள் பெற</span>
-      </a>
+  <!-- ⭐ Google Reviews -->
+  <section>
+    <div class="card reveal" id="reviews">
+      <div class="reviewsHeader">
+        <h3 style="margin:0;" data-ta="⭐ வாடிக்கையாளர் கருத்துகள்" data-en="⭐ Customer Reviews">⭐ வாடிக்கையாளர் கருத்துகள்</h3>
+        <div class="gBadge" aria-label="Google rating badge">
+          <span>Google</span>
+          <span class="stars">★★★★★</span>
+          <span class="muted" style="font-weight:900;">(Reviews)</span>
+        </div>
+      </div>
+
+      <!-- Embedded Google place (shows rating/reviews in map UI) -->
+      <div class="reviewsBox reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.5771388022636!2d77.51567327574129!3d11.438207246637232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93f5aff4ac153%3A0x7aeff8450a845d1c!2z4K6q4K6-4K6kIOCuheCutOCvgeCupOCvjeCupCDgrqrgr4HgrqTgr43grqTgr4HgrqPgrrDgr43grrXgr4Eg4K6a4K6_4K6V4K6_4K6a4K-N4K6a4K-IIOCuruCviOCur-CuruCvjShGb290IFJlZmxleG9sb2d5IFJlanV2ZW5hdGlvbiBUaGVycHkgQ2VudGVyKSwgZ29iaQ!5e0!3m2!1sen!2sin!4v1769856289999!5m2!1sen!2sin"
+          width="100%"
+          height="420"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Google reviews map embed">
+        </iframe>
+      </div>
+
+      <!-- Auto scrolling review cards (editable text) -->
+      <div class="reviewsBox" style="margin-top:16px;">
+        <div class="reviewsMarquee" aria-label="Customer review highlights">
+          <div class="reviewsTrack">
+            <!-- set A -->
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">A</div>
+                  <div class="name" data-ta="அருணா" data-en="Aruna">அருணா</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="மிக நல்ல சிகிச்சை. உடல் சோர்வு குறைந்தது. நன்றாக தூக்கம் வந்தது."
+                 data-en="Very good therapy. My fatigue reduced and I slept better.">
+                மிக நல்ல சிகிச்சை. உடல் சோர்வு குறைந்தது. நன்றாக தூக்கம் வந்தது.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">K</div>
+                  <div class="name" data-ta="கார்த்திக்" data-en="Karthik">கார்த்திக்</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="மனஅழுத்தம் குறைந்து உடல் லேசாக இருந்தது. சேவை மிக அருமை."
+                 data-en="Stress reduced and I felt lighter. Excellent service.">
+                மனஅழுத்தம் குறைந்து உடல் லேசாக இருந்தது. சேவை மிக அருமை.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">S</div>
+                  <div class="name" data-ta="சரவணன்" data-en="Saravanan">சரவணன்</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="முதுகு & கழுத்து வலி தணிந்தது. சுத்தமாகவும் நன்றாகவும் வைத்திருக்கிறார்கள்."
+                 data-en="Back & neck pain eased. Clean place and well maintained.">
+                முதுகு & கழுத்து வலி தணிந்தது. சுத்தமாகவும் நன்றாகவும் வைத்திருக்கிறார்கள்.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">P</div>
+                  <div class="name" data-ta="பிரியா" data-en="Priya">பிரியா</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="உறக்கம் சீரானது. உடல் புத்துணர்வு கிடைத்தது. ரெகமெண்ட் செய்கிறேன்."
+                 data-en="My sleep improved and I felt rejuvenated. Highly recommended.">
+                உறக்கம் சீரானது. உடல் புத்துணர்வு கிடைத்தது. ரெகமெண்ட் செய்கிறேன்.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">M</div>
+                  <div class="name" data-ta="முரளி" data-en="Murali">முரளி</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="சேவை நேரம் சரியாகவும் விளக்கமாகவும் செய்தார்கள். நன்றாக பயன் இருந்தது."
+                 data-en="They explained clearly and the session was on time. Great benefits.">
+                சேவை நேரம் சரியாகவும் விளக்கமாகவும் செய்தார்கள். நன்றாக பயன் இருந்தது.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">J</div>
+                  <div class="name" data-ta="ஜெயா" data-en="Jaya">ஜெயா</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="அமைதியான சூழல். சிகிச்சை முடிந்ததும் உடல் ரிலாக்ஸ் ஆனது."
+                 data-en="Peaceful environment. Felt relaxed right after the therapy.">
+                அமைதியான சூழல். சிகிச்சை முடிந்ததும் உடல் ரிலாக்ஸ் ஆனது.
+              </p>
+            </div>
+
+            <!-- set B (duplicate for seamless loop) -->
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">A</div>
+                  <div class="name" data-ta="அருணா" data-en="Aruna">அருணா</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="மிக நல்ல சிகிச்சை. உடல் சோர்வு குறைந்தது. நன்றாக தூக்கம் வந்தது."
+                 data-en="Very good therapy. My fatigue reduced and I slept better.">
+                மிக நல்ல சிகிச்சை. உடல் சோர்வு குறைந்தது. நன்றாக தூக்கம் வந்தது.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">K</div>
+                  <div class="name" data-ta="கார்த்திக்" data-en="Karthik">கார்த்திக்</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="மனஅழுத்தம் குறைந்து உடல் லேசாக இருந்தது. சேவை மிக அருமை."
+                 data-en="Stress reduced and I felt lighter. Excellent service.">
+                மனஅழுத்தம் குறைந்து உடல் லேசாக இருந்தது. சேவை மிக அருமை.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">S</div>
+                  <div class="name" data-ta="சரவணன்" data-en="Saravanan">சரவணன்</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="முதுகு & கழுத்து வலி தணிந்தது. சுத்தமாகவும் நன்றாகவும் வைத்திருக்கிறார்கள்."
+                 data-en="Back & neck pain eased. Clean place and well maintained.">
+                முதுகு & கழுத்து வலி தணிந்தது. சுத்தமாகவும் நன்றாகவும் வைத்திருக்கிறார்கள்.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">P</div>
+                  <div class="name" data-ta="பிரியா" data-en="Priya">பிரியா</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="உறக்கம் சீரானது. உடல் புத்துணர்வு கிடைத்தது. ரெகமெண்ட் செய்கிறேன்."
+                 data-en="My sleep improved and I felt rejuvenated. Highly recommended.">
+                உறக்கம் சீரானது. உடல் புத்துணர்வு கிடைத்தது. ரெகமெண்ட் செய்கிறேன்.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">M</div>
+                  <div class="name" data-ta="முரளி" data-en="Murali">முரளி</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="சேவை நேரம் சரியாகவும் விளக்கமாகவும் செய்தார்கள். நன்றாக பயன் இருந்தது."
+                 data-en="They explained clearly and the session was on time. Great benefits.">
+                சேவை நேரம் சரியாகவும் விளக்கமாகவும் செய்தார்கள். நன்றாக பயன் இருந்தது.
+              </p>
+            </div>
+
+            <div class="reviewCard">
+              <div class="reviewTop">
+                <div class="who">
+                  <div class="avatar">J</div>
+                  <div class="name" data-ta="ஜெயா" data-en="Jaya">ஜெயா</div>
+                </div>
+                <div class="miniStars">★★★★★</div>
+              </div>
+              <p class="reviewText" data-ta="அமைதியான சூழல். சிகிச்சை முடிந்ததும் உடல் ரிலாக்ஸ் ஆனது."
+                 data-en="Peaceful environment. Felt relaxed right after the therapy.">
+                அமைதியான சூழல். சிகிச்சை முடிந்ததும் உடல் ரிலாக்ஸ் ஆனது.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="reviewsActions">
+        <a class="dirBtn" href="https://www.google.com/maps?cid=8858571967473933596" target="_blank" rel="noopener">
+          ⭐ <span data-ta="Google Reviews பார்க்க" data-en="View on Google Reviews">Google Reviews பார்க்க</span>
+        </a>
+        <a class="ghostBtn" href="https://www.google.com/maps?cid=8858571967473933596&hl=en&review=1" target="_blank" rel="noopener">
+          ✍️ <span data-ta="Review எழுத" data-en="Write a Review">Review எழுத</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -756,6 +1110,31 @@ display:grid;
     }, {threshold: 0.12});
 
     imgs.forEach(img => io.observe(img));
+
+    // ===== Reveal on scroll (auto fade-in for sections/cards) =====
+    const revealNodes = document.querySelectorAll(".reveal");
+    const rio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add("in");
+          rio.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.14});
+
+    revealNodes.forEach(n => rio.observe(n));
+
+    // ===== Seamless marquee width safety =====
+    // If track is too short (rare), slow down less by extending duration.
+    const track = document.querySelector(".reviewsTrack");
+    if(track){
+      const trackWidth = track.scrollWidth;
+      const viewWidth = track.parentElement?.clientWidth || 1;
+      if(trackWidth < viewWidth * 2){
+        track.style.animationDuration = "44s";
+      }
+    }
+
   </script>
 </body>
 </html>
