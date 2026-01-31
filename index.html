@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</title>
+
+  <meta name="description" content="பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் - Foot Reflexology Rejuvenation Therapy Center. Appointment booking on WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#eef2f8;
+      --text:#0f1220;
+      --card:#ffffff;
+      --shadow:rgba(0,0,0,.18);
+
+      /* ✅ Header Gradient (Option B) */
+      --headerTop:#0d47a1;
+      --headerBottom:#6a1b9a;
+      --headerBorder:#311b92;
+
+      --red:#c62828;
+      --blue:#0d47a1;
+      --yellow:#ffeb3b;
+
+      --btn:#25D366;
+      --radius:16px;
+
+      --muted: rgba(15,18,32,.72);
+      --line: rgba(0,0,0,.06);
+    }
+
+    [data-theme="dark"]{
+      --bg:#0b1020;
+      --text:#eef0ff;
+      --card:#141a2e;
+      --shadow:rgba(0,0,0,.55);
+      --muted: rgba(238,240,255,.72);
+      --line: rgba(255,255,255,.08);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      font-family:'Noto Sans Tamil', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    /* ========= HEADER ========= */
+    header{
+      background:linear-gradient(135deg,var(--headerTop),var(--headerBottom));
+      background-size:200% 200%;
+      animation:gradientMove 10s ease infinite;
+      text-align:center;
+      padding:40px 16px 32px;
+      border-bottom:10px solid var(--headerBorder);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+
+    header::before{
+      content:"";
+      position:absolute;
+      inset:-60px;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.20), transparent 45%),
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,0.14), transparent 48%),
+        radial-gradient(circle at 55% 80%, rgba(255,255,255,0.10), transparent 50%);
+      filter: blur(10px);
+      animation: floatGlow 9s ease-in-out infinite;
+      pointer-events:none;
+    }
+
+    @keyframes floatGlow{
+      0%,100%{ transform: translate3d(0,0,0) scale(1); opacity: 0.9; }
+      50%{ transform: translate3d(0,-18px,0) scale(1.05); opacity: 1; }
+    }
+
+    @keyframes gradientMove{
+      0%{ background-position:0% 50% }
+      50%{ background-position:100% 50% }
+      100%{ background-position:0% 50% }
+    }
+
+    .om{
+      font-weight:900;
+      letter-spacing:.5px;
+      opacity:.95;
+      position:relative;
+      z-index:1;
+      animation: popIn .7s ease both;
+    }
+
+    header h2{
+      margin:8px 0 0;
+      font-size:clamp(1.15rem, 2.8vw, 1.55rem);
+      font-weight:900;
+      position:relative;
+      z-index:1;
+      animation: slideDown .85s ease both;
+    }
+
+    header h1{
+      margin:14px 0 8px;
+      font-size:clamp(1.7rem, 3.8vw, 2.5rem);
+      font-weight:900;
+      color:var(--yellow);
+      text-shadow: 0 10px 24px rgba(0,0,0,.25);
+      position:relative;
+      z-index:1;
+      animation: heroTitle 1s cubic-bezier(.2,.9,.2,1) both;
+    }
+
+    .sub{
+      margin-top:6px;
+      font-size:clamp(.95rem, 2.2vw, 1.1rem);
+      opacity:.95;
+      position:relative;
+      z-index:1;
+      animation: fadeUp .9s ease both;
+    }
+
+    .contact{
+      margin-top:12px;
+      font-size:clamp(1.1rem, 2.7vw, 1.4rem);
+      font-weight:900;
+      position:relative;
+      z-index:1;
+      animation: fadeUp .95s ease both;
+    }
+
+    @keyframes popIn{ from{ transform: scale(.95); opacity:0;} to{ transform: scale(1); opacity:1; } }
+    @keyframes slideDown{ from{ transform: translateY(-14px); opacity:0;} to{ transform: translateY(0); opacity:1;} }
+    @keyframes fadeUp{ from{ transform: translateY(16px); opacity:0;} to{ transform: translateY(0); opacity:1;} }
+    @keyframes heroTitle{ from{ transform: translateY(18px) scale(.98); opacity:0;} to{ transform: translateY(0) scale(1); opacity:1;} }
+
+    /* ========= TOP CONTROLS ========= */
+    .topbar{
+      position:fixed;
+      top:14px;
+      right:14px;
+      z-index:999;
+      display:flex;
+      gap:10px;
+    }
+    .chip{
+      border:0;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.90);
+      color:#111;
+      box-shadow:0 12px 26px rgba(0,0,0,.20);
+      cursor:pointer;
+      font-weight:900;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      backdrop-filter: blur(8px);
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    [data-theme="dark"] .chip{
+      background:rgba(20,26,46,.88);
+      color:#eef0ff;
+      box-shadow:0 12px 26px rgba(0,0,0,.45);
+    }
+    .chip:hover{ transform: translateY(-1px); }
+    .chip:active{ transform: translateY(0) scale(.99); }
+
+    /* ========= LAYOUT ========= */
+    section{ max-width:1100px; margin:auto; padding:28px 18px; }
+
+    .highlight{
+      background:#1a237e;
+      color:var(--yellow);
+      padding:22px;
+      text-align:center;
+      font-weight:900;
+      border-radius:14px;
+      box-shadow:0 12px 26px var(--shadow);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 12px 26px var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:clamp(1.25rem, 2.5vw, 1.8rem);
+      color:var(--red);
+      text-align:center;
+      font-weight:900;
+    }
+
+    .muted{ color: var(--muted); }
+    .muted code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-weight: 800;
+      font-size: .98em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.06);
+      color: var(--text);
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .muted code{ background: rgba(255,255,255,.08); }
+
+    /* ========= GALLERY ========= */
+    .gallery{ grid-column: 1 / -1; }
+    .galleryGrid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .ph{
+      grid-column: span 4;
+      height: 220px;
+      border-radius: 16px;
+      overflow:hidden;
+      box-shadow:0 12px 26px var(--shadow);
+      border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(13,71,161,.20), rgba(106,27,154,.18));
+      position:relative;
+    }
+    .ph img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform: scale(1.02);
+      transition: transform .45s ease, opacity .45s ease;
+      opacity:0;
+    }
+    .ph img.in{ opacity:1; transform: scale(1); }
+    .ph:hover img{ transform: scale(1.06); }
+
+    @media (max-width: 900px){
+      .ph{ grid-column: span 6; height: 200px; }
+    }
+    @media (max-width: 560px){
+      section{ padding:22px 14px; }
+      .ph{ grid-column: span 12; height: 220px; }
+    }
+
+    /* ========= BENEFITS + SERVICES ========= */
+    .benefits{ grid-column: 1 / 8; }
+    .services{ grid-column: 8 / -1; }
+
+    @media (max-width: 900px){
+      .benefits, .services{ grid-column: 1 / -1; }
+    }
+
+    ul{
+      margin:0;
+      padding-left:18px;
+      line-height:1.9;
+      font-size:1.05rem;
+    }
+
+    .pillRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      margin-top:12px;
+    }
+    .pill{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(13,71,161,.08);
+      font-weight:800;
+    }
+    [data-theme="dark"] .pill{ background: rgba(255,255,255,.06); }
+
+    /* ========= MAP ========= */
+    .map{
+      grid-column: 1 / -1;
+      overflow:hidden;
+      border-radius:var(--radius);
+      box-shadow:0 12px 26px var(--shadow);
+      border:1px solid var(--line);
+    }
+    .map iframe{
+      width:100%;
+      height:360px;
+      border:0;
+      display:block;
+    }
+
+    .dirBtnWrap{
+      text-align:center;
+      margin-top:12px;
+    }
+    .dirBtn{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:900;
+      text-decoration:none;
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 12px 26px rgba(0,0,0,.22);
+    }
+    .dirBtn:hover{ opacity:.95; }
+
+    /* ========= WHATSAPP ========= */
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:var(--btn);
+      color:#fff;
+      padding:14px 18px;
+      border-radius:50px;
+      font-weight:900;
+      text-decoration:none;
+      box-shadow:0 12px 26px rgba(0,0,0,.35);
+      z-index:999;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .whatsapp:hover{ opacity:.95; transform: translateY(-1px); }
+    .whatsapp:active{ transform: translateY(0) scale(.99); }
+
+    /* ========= FOOTER ========= */
+    footer{
+      background:var(--red);
+      color:#fff;
+      text-align:center;
+      padding:16px;
+      margin-top:40px;
+      font-size:1rem;
+    }
+
+    /* reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+      header{ background-size:auto; }
+    }
+  </style>
+</head>
+
+<body data-theme="light" data-lang="ta">
+
+  <!-- Top Controls -->
+  <div class="topbar">
+    <button class="chip" id="langBtn" type="button" aria-label="Toggle language">
+      🌐 <span id="langText">தமிழ்</span>
+    </button>
+    <button class="chip" id="themeBtn" type="button" aria-label="Toggle theme">
+      🌗 <span id="themeText">Light</span>
+    </button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="om" data-ta="ஓம்" data-en="Om">ஓம்</div>
+
+    <h2 data-ta="ஸ்ரீ அங்காளம்மன் துணை" data-en="With the blessings of Sri Angalamman">
+      ஸ்ரீ அங்காளம்மன் துணை
+    </h2>
+
+    <div class="sub" data-ta="Er. E. நம்பசிவம் M.E.," data-en="Er. E. Nambasivam, M.E.,">
+      Er. E. நம்பசிவம் M.E.,
+    </div>
+
+    <h1
+      data-ta="பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்"
+      data-en="Foot Reflexology Rejuvenation Therapy Center">
+      பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்
+    </h1>
+
+    <div class="sub"
+      data-ta="(Foot Reflexology Rejuvenation Therapy Center)"
+      data-en="(Foot Reflexology Rejuvenation Therapy Center)">
+      (Foot Reflexology Rejuvenation Therapy Center)
+    </div>
+
+    <div class="sub"
+      data-ta="குயிலங்காடு தோட்டம், சூரியம்பாளையம்,<br/>கவுந்தப்பாடி to கோபி மெயின் ரோடு"
+      data-en="Kuyilangadu Thottam, Sooriyampalayam,<br/>Kavundapadi to Gobi Main Road">
+      குயிலங்காடு தோட்டம், சூரியம்பாளையம்,<br/>கவுந்தப்பாடி to கோபி மெயின் ரோடு
+    </div>
+
+    <div class="contact"
+      data-ta="📞 செல் : 97914 06655"
+      data-en="📞 Call : +91 97914 06655">
+      📞 செல் : 97914 06655
+    </div>
+  </header>
+
+  <!-- Highlight -->
+  <section>
+    <div class="highlight"
+      data-ta="இந்த பாதஅழுத்த சிகிச்சையின் மூலம்<br/>அனைத்து வியாதிகளுக்கும் நிவாரணம் பெறலாம்"
+      data-en="Through this foot reflexology therapy,<br/>you may find relief for many common health issues">
+      இந்த பாதஅழுத்த சிகிச்சையின் மூலம்<br/>
+      அனைத்து வியாதிகளுக்கும் நிவாரணம் பெறலாம்
+    </div>
+  </section>
+
+    <!-- Gallery -->
+  <section>
+    <div class="card gallery">
+      <h3 data-ta="📸 மையத்தின் புகைப்படங்கள்" data-en="📸 Center Photos">📸 மையத்தின் புகைப்படங்கள்</h3>
+
+      <div class="galleryGrid">
+        <div class="ph"><img src="assets/images/center1.jpg" alt="Center photo 1" loading="lazy"></div>
+        <div class="ph"><img src="assets/images/center2.jpg" alt="Center photo 2" loading="lazy"></div>
+        <div class="ph"><img src="assets/images/center3.jpg" alt="Center photo 3" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits + Services -->
+  <section>
+    <div class="grid">
+      <div class="card benefits">
+        <h3 data-ta="🦶 பாத அழுத்த சிகிச்சையின் நன்மைகள்" data-en="🦶 Benefits of Foot Reflexology">
+          🦶 பாத அழுத்த சிகிச்சையின் நன்மைகள்
+        </h3>
+
+        <ul>
+          <li data-ta="உடலில் உள்ள நரம்பு மண்டலத்தை சீராக்க உதவும்" data-en="Helps balance the nervous system">உடலில் உள்ள நரம்பு மண்டலத்தை சீராக்க உதவும்</li>
+          <li data-ta="ரத்த ஓட்டத்தை மேம்படுத்த உதவும்" data-en="Improves blood circulation">ரத்த ஓட்டத்தை மேம்படுத்த உதவும்</li>
+          <li data-ta="மன அழுத்தம் மற்றும் சோர்வை குறைக்க உதவும்" data-en="Reduces stress and fatigue">மன அழுத்தம் மற்றும் சோர்வை குறைக்க உதவும்</li>
+          <li data-ta="உறக்கம் மற்றும் தளர்வை மேம்படுத்த உதவும்" data-en="Supports better sleep and relaxation">உறக்கம் மற்றும் தளர்வை மேம்படுத்த உதவும்</li>
+          <li data-ta="உடல் புத்துணர்வு மற்றும் நல பராமரிப்பிற்கு உதவும்" data-en="Supports overall wellness and rejuvenation">உடல் புத்துணர்வு மற்றும் நல பராமரிப்பிற்கு உதவும்</li>
+        </ul>
+
+        <div class="pillRow">
+          <span class="pill" data-ta="✅ நல பராமரிப்பு" data-en="✅ Wellness Care">✅ நல பராமரிப்பு</span>
+          <span class="pill" data-ta="✅ தளர்வு" data-en="✅ Relaxation">✅ தளர்வு</span>
+          <span class="pill" data-ta="✅ புத்துணர்வு" data-en="✅ Rejuvenation">✅ புத்துணர்வு</span>
+        </div>
+      </div>
+
+      <div class="card services">
+        <h3 data-ta="🧾 சேவைகள் • கட்டணம் • நேரம்" data-en="🧾 Services • Price • Timing">
+          🧾 சேவைகள் • கட்டணம் • நேரம்
+        </h3>
+
+        <ul>
+          <li data-ta="சேவை: பாத அழுத்த புத்துணர்வு சிகிச்சை" data-en="Service: Foot Reflexology Rejuvenation Therapy">சேவை: பாத அழுத்த புத்துணர்வு சிகிச்சை</li>
+          <li data-ta="நேரம்: 30 / 45 / 60 நிமிடங்கள்" data-en="Duration: 30 / 45 / 60 minutes">நேரம்: 30 / 45 / 60 நிமிடங்கள்</li>
+          <li data-ta="முன்பதிவு: WhatsApp மூலம்" data-en="Booking: via WhatsApp">முன்பதிவு: WhatsApp மூலம்</li>
+          <li data-ta="கட்டணம்: (உங்கள் விலை சேர்க்கவும்)" data-en="Price: (Add your price)">கட்டணம்: (உங்கள் விலை சேர்க்கவும்)</li>
+          <li data-ta="நேரங்கள்: காலை/மாலை (உங்கள் நேரம் சேர்க்கவும்)" data-en="Timings: Morning/Evening (Add your timings)">நேரங்கள்: காலை/மாலை (உங்கள் நேரம் சேர்க்கவும்)</li>
+        </ul>
+
+        </div>
+    </div>
+  </section>
+
+  <!-- Note + Map -->
+  <section>
+    <div class="card">
+      <h3 data-ta="ℹ️ முன்பதிவு குறிப்பு" data-en="ℹ️ Appointment Note">ℹ️ முன்பதிவு குறிப்பு</h3>
+
+      <!-- ✅ FIXED: Removed broken attribute quotes and invalid <br/> inside attributes -->
+      <div style="text-align:center; line-height:1.9; font-size:1.06rem;">
+        <p
+          style="margin:0"
+          data-ta="குறிப்பு : இந்த பாத அழுத்த சிகிச்சைகளை மேற்கொள்ளுவதற்கு மணி நேரத்திற்கு முன்பும், பின்பும் உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது. அப்போது தான் சிகிச்சையின் முழு பலனையும் பெற முடியும்."
+          data-en="Note: For best results, please avoid food and water <strong>1 hour before</strong> and <strong>1 hour after</strong> the therapy. This helps you get the full benefit of the session.">
+          குறிப்பு : இந்த பாத அழுத்த சிகிச்சைகளை மேற்கொள்ளுவதற்கு மணி நேரத்திற்கு முன்பும், பின்பும் உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது.
+          அப்போது தான் சிகிச்சையின் முழு பலனையும் பெற முடியும்.
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ Exact Map -->
+    <div class="map" style="margin-top:18px;">
+      <iframe
+        src="https://www.google.com/maps?q=11.438442,77.518272&z=17&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="Google map location">
+      </iframe>
+    </div>
+
+    <div class="dirBtnWrap">
+      <a class="dirBtn" href="https://www.google.com/maps?q=11.438442,77.518272" target="_blank" rel="noopener">
+        📍 <span data-ta="திசைகள் பெற" data-en="Get Directions">திசைகள் பெற</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 <span data-ta="பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்" data-en="Foot Reflexology Therapy Center">பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</span>
+  </footer>
+
+  <a class="whatsapp"
+     id="waBtn"
+     href="https://wa.me/919791406655?text=வணக்கம்,%20பாத%20அழுத்த%20சிகிச்சைக்கு%20முன்பதிவு%20செய்ய%20விரும்புகிறேன்.%20Location:%20https://www.google.com/maps?q=11.438442,77.518272"
+     target="_blank" rel="noopener">
+    WhatsApp – <span data-ta="முன்பதிவு" data-en="Book Now">முன்பதிவு</span>
+  </a>
+
+  <script>
+    // ===== Theme =====
+    function applyTheme(theme){
+      document.body.setAttribute("data-theme", theme);
+      document.getElementById("themeText").textContent = theme === "dark" ? "Dark" : "Light";
+      localStorage.setItem("site_theme", theme);
+    }
+
+    // ===== Language =====
+    function applyLanguage(lang){
+      document.body.setAttribute("data-lang", lang);
+      document.documentElement.lang = lang === "en" ? "en" : "ta";
+
+      const nodes = document.querySelectorAll("[data-ta][data-en]");
+      nodes.forEach(el => {
+        // Using innerHTML intentionally (needed for <br/> and <strong> in translations).
+        el.innerHTML = (lang === "en") ? el.getAttribute("data-en") : el.getAttribute("data-ta");
+      });
+
+      document.getElementById("langText").textContent = (lang === "en") ? "English" : "தமிழ்";
+
+      // Update WhatsApp text in selected language
+      const mapLink = "https://www.google.com/maps?q=11.438442,77.518272";
+      const taMsg = "வணக்கம், பாத அழுத்த சிகிச்சைக்கு முன்பதிவு செய்ய விரும்புகிறேன். Location: " + mapLink;
+      const enMsg = "Hello, I would like to book an appointment for Foot Reflexology. Location: " + mapLink;
+
+      const wa = document.getElementById("waBtn");
+      const msg = (lang === "en") ? enMsg : taMsg;
+      wa.href = "https://wa.me/919791406655?text=" + encodeURIComponent(msg);
+
+      localStorage.setItem("site_lang", lang);
+    }
+
+    // ===== Buttons =====
+    document.getElementById("themeBtn").addEventListener("click", () => {
+      const current = document.body.getAttribute("data-theme");
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+
+    document.getElementById("langBtn").addEventListener("click", () => {
+      const current = document.body.getAttribute("data-lang");
+      applyLanguage(current === "en" ? "ta" : "en");
+    });
+
+    // ===== Initial =====
+    const savedTheme = localStorage.getItem("site_theme");
+    const savedLang  = localStorage.getItem("site_lang");
+
+    if(savedTheme){
+      applyTheme(savedTheme);
+    } else {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? "dark" : "light");
+    }
+
+    applyLanguage(savedLang || "ta");
+
+    // ===== Gallery reveal animation =====
+    const imgs = document.querySelectorAll(".ph img");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.12});
+
+    imgs.forEach(img => io.observe(img));
+  </script>
+</body>
+</html>
