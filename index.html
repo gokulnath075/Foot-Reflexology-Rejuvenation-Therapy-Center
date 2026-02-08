@@ -4,1137 +4,842 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</title>
-
-  <meta name="description" content="பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் - Foot Reflexology Rejuvenation Therapy Center. Appointment booking on WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <meta name="description" content="பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் - Reflexology Rejuvenation Therapy Center. முன்பதிவு WhatsApp மூலம்." />
 
   <style>
     :root{
-      --bg:#eef2f8;
-      --text:#0f1220;
+      --primary:#25c7b7;
+      --dark:#0f172a;
+      --bg:#f0fbfb;
       --card:#ffffff;
-      --shadow:rgba(0,0,0,.18);
-
-      /* ✅ Header Gradient (Option B) */
-      --headerTop:#0d47a1;
-      --headerBottom:#6a1b9a;
-      --headerBorder:#311b92;
-
-      --red:#c62828;
-      --blue:#0d47a1;
-      --yellow:#ffeb3b;
-
-      --btn:#25D366;
-      --radius:16px;
-
-      --muted: rgba(15,18,32,.72);
-      --line: rgba(0,0,0,.06);
+      --muted:#334155;
+      --shadow: 0 12px 30px rgba(2, 6, 23, 0.10);
+      --radius: 18px;
+      --border:#e2e8f0;
     }
 
-    [data-theme="dark"]{
-      --bg:#0b1020;
-      --text:#eef0ff;
-      --card:#141a2e;
-      --shadow:rgba(0,0,0,.55);
-      --muted: rgba(238,240,255,.72);
-      --line: rgba(255,255,255,.08);
-    }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-
+    *{ margin:0; padding:0; box-sizing:border-box; }
     body{
-      margin:0;
-      font-family:'Noto Sans Tamil', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
+      color:var(--dark);
+      font-family: system-ui, -apple-system, "Noto Sans Tamil", "Latha", Arial, sans-serif;
+      line-height:1.6;
     }
 
-    /* ========= HEADER ========= */
+    /* HEADER */
     header{
-      background:linear-gradient(135deg,var(--headerTop),var(--headerBottom));
-      background-size:200% 200%;
-      animation:gradientMove 10s ease infinite;
-      text-align:center;
-      padding:40px 16px 32px;
-      border-bottom:10px solid var(--headerBorder);
-      color:#fff;
-      position:relative;
-      overflow:hidden;
+      position:sticky; top:0; z-index:100;
+      background:#0b1220; color:#fff;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 18px;
+      gap:12px;
+    }
+    .brand{ display:flex; gap:12px; align-items:center; min-width: 200px; }
+    .brand img{ width:40px; height:40px; }
+    .brand b{ font-size:14px; line-height:1.2; }
+    nav{ display:flex; gap:18px; flex-wrap:wrap; }
+    nav a{ color:#fff; text-decoration:none; font-size:14px; opacity:.95; }
+    nav a:hover{ opacity:1; text-decoration:underline; }
+    .whatsapp{
+      background:var(--primary); color:#000;
+      padding:9px 14px; border-radius:999px;
+      font-weight:800; text-decoration:none;
+      white-space:nowrap;
+      display:inline-block;
     }
 
-    header::before{
-      content:"";
-      position:absolute;
-      inset:-60px;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.20), transparent 45%),
-        radial-gradient(circle at 80% 40%, rgba(255,255,255,0.14), transparent 48%),
-        radial-gradient(circle at 55% 80%, rgba(255,255,255,0.10), transparent 50%);
-      filter: blur(10px);
-      animation: floatGlow 9s ease-in-out infinite;
-      pointer-events:none;
+    /* HERO */
+    .hero{
+      min-height:calc(100vh - 70px);
+      display:flex; align-items:center; justify-content:center;
+      padding:40px 16px; text-align:center; color:#fff;
+      background-image:
+        linear-gradient(rgba(15,23,42,.75), rgba(15,23,42,.85)),
+        url("https://images.squarespace-cdn.com/content/v1/584a1f6c20099e929d1b0900/1499401853967-VQ08L05B0TTUSVA3DEQM/bigstock-Acupressure-reflexology-87442658.jpg?format=2500w");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
     }
-
-    @keyframes floatGlow{
-      0%,100%{ transform: translate3d(0,0,0) scale(1); opacity: 0.9; }
-      50%{ transform: translate3d(0,-18px,0) scale(1.05); opacity: 1; }
-    }
-
-    @keyframes gradientMove{
-      0%{ background-position:0% 50% }
-      50%{ background-position:100% 50% }
-      100%{ background-position:0% 50% }
-    }
-
-    .om{
+    .hero h1{
+      font-size: clamp(28px, 5vw, 46px);
+      line-height:1.25;
       font-weight:900;
-      letter-spacing:.5px;
+      letter-spacing:.2px;
+    }
+    .hero p{
+      max-width: 760px;
+      margin: 14px auto 22px;
       opacity:.95;
-      position:relative;
-      z-index:1;
-      animation: popIn .7s ease both;
+      font-size: clamp(14px, 2vw, 18px);
     }
-
-    header h2{
-      margin:8px 0 0;
-      font-size:clamp(1.15rem, 2.8vw, 1.55rem);
-      font-weight:900;
-      position:relative;
-      z-index:1;
-      animation: slideDown .85s ease both;
-    }
-
-    header h1{
-      margin:14px 0 8px;
-      font-size:clamp(1.7rem, 3.8vw, 2.5rem);
-      font-weight:900;
-      color:var(--yellow);
-      text-shadow: 0 10px 24px rgba(0,0,0,.25);
-      position:relative;
-      z-index:1;
-      animation: heroTitle 1s cubic-bezier(.2,.9,.2,1) both;
-    }
-
-    .sub{
-      margin-top:6px;
-      font-size:clamp(.95rem, 2.2vw, 1.1rem);
-      opacity:.95;
-      position:relative;
-      z-index:1;
-      animation: fadeUp .9s ease both;
-    }
-
-    .contact{
-      margin-top:12px;
-      font-size:clamp(1.1rem, 2.7vw, 1.4rem);
-      font-weight:900;
-      position:relative;
-      z-index:1;
-      animation: fadeUp .95s ease both;
-    }
-
-    @keyframes popIn{ from{ transform: scale(.95); opacity:0;} to{ transform: scale(1); opacity:1; } }
-    @keyframes slideDown{ from{ transform: translateY(-14px); opacity:0;} to{ transform: translateY(0); opacity:1;} }
-    @keyframes fadeUp{ from{ transform: translateY(16px); opacity:0;} to{ transform: translateY(0); opacity:1;} }
-    @keyframes heroTitle{ from{ transform: translateY(18px) scale(.98); opacity:0;} to{ transform: translateY(0) scale(1); opacity:1;} }
-
-    /* ========= TOP CONTROLS ========= */
-    .topbar{
-      position:fixed;
-      top:14px;
-      right:14px;
-      z-index:999;
-      display:flex;
-      gap:10px;
-    }
-    .chip{
-      border:0;
-      padding:10px 12px;
+    .cta{
+      display:inline-block;
+      background:var(--primary);
+      padding:12px 22px;
       border-radius:999px;
-      background:rgba(255,255,255,.90);
-      color:#111;
-      box-shadow:0 12px 26px rgba(0,0,0,.20);
-      cursor:pointer;
       font-weight:900;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      backdrop-filter: blur(8px);
-      transition: transform .15s ease, opacity .15s ease;
-    }
-    [data-theme="dark"] .chip{
-      background:rgba(20,26,46,.88);
-      color:#eef0ff;
-      box-shadow:0 12px 26px rgba(0,0,0,.45);
-    }
-    .chip:hover{ transform: translateY(-1px); }
-    .chip:active{ transform: translateY(0) scale(.99); }
-
-    /* ========= LAYOUT ========= */
-    section{ max-width:1100px; margin:auto; padding:28px 18px; }
-
-    .highlight{
-      background:#1a237e;
-      color:var(--yellow);
-      padding:22px;
-      text-align:center;
-      font-weight:900;
-      border-radius:14px;
-      box-shadow:0 12px 26px var(--shadow);
+      text-decoration:none;
+      color:#000;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:16px;
-      margin-top:18px;
-    }
-
+    /* SECTIONS */
+    section{ padding:70px 16px; }
     .card{
+      max-width:1100px;
+      margin: 0 auto;
       background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:0 12px 26px var(--shadow);
+      padding: 26px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
+    /* ✅ CENTER ALL SECTION TITLES */
     .card h3{
-      margin:0 0 10px;
-      font-size:clamp(1.25rem, 2.5vw, 1.8rem);
-      color:var(--red);
-      text-align:center;
-      font-weight:900;
+      font-size: clamp(20px, 2.4vw, 28px);
+      margin-bottom: 18px;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: .2px;
     }
 
-    .muted{ color: var(--muted); }
-    .muted code{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-weight: 800;
-      font-size: .98em;
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(0,0,0,.06);
-      color: var(--text);
-      white-space: nowrap;
+    /* BENEFITS LIST */
+    .list{ display:grid; gap:10px; margin-top:10px; }
+    .list li{
+      list-style:none;
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--muted);
+      padding: 6px 0;
     }
-    [data-theme="dark"] .muted code{ background: rgba(255,255,255,.08); }
 
-    /* ========= GALLERY ========= */
-    .gallery{ grid-column: 1 / -1; }
+    /* =========================
+       ✅ GALLERY + HOVER EFFECTS
+       ========================= */
     .galleryGrid{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-      margin-top:14px;
-display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-      margin-top:14px;
+      grid-template-columns: repeat(4, 1fr);
+      gap:16px;
     }
-    .ph{
-      flex:0 0 280px;
-      scroll-snap-align:start;
 
-      grid-column: span 4;
-      height: 220px;
-      border-radius: 16px;
-      overflow:hidden;
-      box-shadow:0 12px 26px var(--shadow);
-      border:1px solid var(--line);
-      background: linear-gradient(135deg, rgba(13,71,161,.20), rgba(106,27,154,.18));
+    .ph{
       position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      background:#e2e8f0;
+      opacity:0;
+      transform:translateY(18px);
+      transition: transform .25s ease, box-shadow .25s ease, opacity .6s ease;
+      will-change: transform;
     }
+    .ph.show{ opacity:1; transform:translateY(0); }
+
     .ph img{
       width:100%;
-      height:100%;
+      height:220px;
       object-fit:cover;
       display:block;
-      transform: scale(1.02);
-      transition: transform .45s ease, opacity .45s ease;
-      opacity:0;
-    }
-    .ph img.in{ opacity:1; transform: scale(1); }
-    .ph:hover img{ transform: scale(1.06); }
-
-    @media (max-width: 900px){
-      .ph{ grid-column: span 6; height: 200px; }
-    }
-    @media (max-width: 560px){
-      section{ padding:22px 14px; }
-      .ph{ grid-column: span 12; height: 220px; }
+      transform: scale(1);
+      transition: transform .35s ease, filter .35s ease;
     }
 
-    /* ========= BENEFITS + SERVICES ========= */
-    .benefits{ grid-column: 1 / 8; }
-    .services{ grid-column: 8 / -1; }
-
-    @media (max-width: 900px){
-      .benefits, .services{ grid-column: 1 / -1; }
+    .ph::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.18));
+      opacity:1;
+      transition: opacity .35s ease;
+      pointer-events:none;
     }
-
-    ul{
-      margin:0;
-      padding-left:18px;
-      line-height:1.9;
-      font-size:1.05rem;
-    }
-
-    .pillRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:center;
-      margin-top:12px;
-    }
-    .pill{
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(13,71,161,.08);
-      font-weight:800;
-    }
-    [data-theme="dark"] .pill{ background: rgba(255,255,255,.06); }
-
-    /* ========= MAP ========= */
-    .map{
-      grid-column: 1 / -1;
-      overflow:hidden;
-      border-radius:var(--radius);
-      box-shadow:0 12px 26px var(--shadow);
-      border:1px solid var(--line);
-    }
-    .map iframe{
-      width:100%;
-      height:360px;
-      border:0;
-      display:block;
-    }
-
-    .dirBtnWrap{
-      text-align:center;
-      margin-top:12px;
-    }
-    .dirBtn{
-      display:inline-block;
-      padding:10px 16px;
-      border-radius:999px;
-      font-weight:900;
-      text-decoration:none;
-      background:var(--blue);
-      color:#fff;
-      box-shadow:0 12px 26px rgba(0,0,0,.22);
-    }
-    .dirBtn:hover{ opacity:.95; }
-
-    /* ========= WHATSAPP ========= */
-    .whatsapp{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:var(--btn);
-      color:#fff;
-      padding:14px 18px;
-      border-radius:50px;
-      font-weight:900;
-      text-decoration:none;
-      box-shadow:0 12px 26px rgba(0,0,0,.35);
-      z-index:999;
-      transition: transform .15s ease, opacity .15s ease;
-    }
-    .whatsapp:hover{ opacity:.95; transform: translateY(-1px); }
-    .whatsapp:active{ transform: translateY(0) scale(.99); }
-
-    /* ========= FOOTER ========= */
-    footer{
-      background:var(--red);
-      color:#fff;
-      text-align:center;
-      padding:16px;
-      margin-top:40px;
-      font-size:1rem;
-    }
-
-    /* reduce motion */
-    @media (prefers-reduced-motion: reduce){
-      *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
-      header{ background-size:auto; }
-    }
-
-    .galleryGrid::-webkit-scrollbar{
-      height:8px;
-    }
-    .galleryGrid::-webkit-scrollbar-thumb{
-      background:rgba(0,0,0,.25);
-      border-radius:8px;
-    }
-    [data-theme="dark"] .galleryGrid::-webkit-scrollbar-thumb{
-      background:rgba(255,255,255,.25);
-    }
-
-    /* ========= SERVICES CAPTION OVERLAY (HOVER / TAP) ========= */
-    .ph{ position:relative; overflow:hidden; }
 
     .cap{
       position:absolute;
       left:0; right:0; bottom:0;
-      padding:14px 14px 16px;
-
+      padding:14px;
       color:#fff;
       font-weight:900;
-      font-size:1.05rem;
-      line-height:1.25;
-
-      background: linear-gradient(
-        180deg,
-        rgba(13,71,161,0),
-        rgba(13,71,161,.75),
-        rgba(106,27,154,.90)
-      );
-      backdrop-filter: blur(6px);
-
-      transform: translateY(100%);
-      opacity:0;
-      transition: transform .25s ease, opacity .25s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,.35);
+      transform: translateY(6px);
+      transition: transform .35s ease;
+      pointer-events:none; /* so clicking works on button */
     }
-
     .cap small{
       display:block;
-      margin-top:6px;
-      font-weight:800;
-      opacity:.9;
-      font-size:.85rem;
+      font-size:12px;
+      opacity:.92;
+      margin-top:4px;
+      font-weight:600;
     }
 
-    /* Desktop hover */
-    .ph:hover .cap{
-      transform: translateY(0);
-      opacity:1;
+    .ph:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(2, 6, 23, 0.18);
+    }
+    .ph:hover img{
+      transform: scale(1.06);
+      filter: saturate(1.1) contrast(1.05);
+    }
+    .ph:hover::after{ opacity: .85; }
+    .ph:hover .cap{ transform: translateY(0); }
+
+    /* Make cards clickable without changing layout */
+    .phBtn{
+      all: unset;
+      display:block;
+      width:100%;
+      cursor:pointer;
+    }
+    .phBtn:focus-visible{
+      outline: 3px solid rgba(37,199,183,.6);
+      outline-offset: 3px;
+      border-radius:16px;
     }
 
-    /* Mobile tap / keyboard focus */
-    .ph:focus-within .cap{
-      transform: translateY(0);
-      opacity:1;
+    /* BOOKING TEXT */
+    .info p{ margin: 8px 0; color: var(--muted); }
+    .note{
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      background: #f8fafc;
+      color: var(--muted);
+      border: 1px solid var(--border);
     }
 
-    .ph img{ cursor:pointer; }
-
-
-    /* Remove empty service cards (prevents blank boxes) */
-    .ph:not(:has(img)){
-      display:none !important;
+    /* =========================
+       ✅ TESTIMONIALS (AUTO ROTATE)
+       ========================= */
+    .tWrap{ max-width: 900px; margin: 0 auto; }
+    .tCarousel{
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
     }
-  
-    /* ========= REVEAL ANIMATION (for sections) ========= */
-    .reveal{
-      opacity:0;
-      transform: translateY(14px);
-      transition: opacity .55s ease, transform .55s ease;
-      will-change: opacity, transform;
+    .tTrack{
+      display: flex;
+      transition: transform .5s ease;
+      will-change: transform;
     }
-    .reveal.in{
-      opacity:1;
-      transform: translateY(0);
+    .tItem{
+      min-width: 100%;
+      padding: 18px;
     }
+    .tCard{
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 16px;
+    }
+    .tQuote{
+      color: var(--muted);
+      font-size: clamp(15px, 2vw, 18px);
+    }
+    .tMeta{
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: #334155;
+      font-weight: 900;
+    }
+    .tStars{ letter-spacing: 1px; }
+    .tDots{
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tDot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #e2e8f0;
+      cursor: pointer;
+    }
+    .tDot.active{ background: var(--primary); }
+    .tBtns{
+      display:flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .tBtn{
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    .tBtn:active{ transform: scale(.98); }
 
-    /* ========= GOOGLE REVIEWS (Card + Auto Scroll) ========= */
-    .reviewsBox{
-      margin-top:14px;
-      position:relative;
+    /* =========================
+       ✅ GOOGLE REVIEWS (MAP EMBED)
+       ========================= */
+    .mapWrap{
       border-radius:16px;
       overflow:hidden;
-      border:1px solid var(--line);
-      box-shadow:0 12px 26px var(--shadow);
-      background: linear-gradient(135deg, rgba(13,71,161,.08), rgba(106,27,154,.06));
+      border:1px solid var(--border);
+      background:#fff;
+    }
+    .mapWrap iframe{
+      width:100%;
+      height:450px;
+      border:0;
+      display:block;
+    }
+    .centerBtn{ text-align:center; margin-top:14px; }
+
+    /* =========================
+       ✅ DETAILS MODAL
+       ========================= */
+    .modalBack{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 9999;
+    }
+    .modalBack.show{ display: flex; }
+
+    .modalBox{
+      width: min(920px, 100%);
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(2,6,23,.25);
     }
 
-    .reviewsHeader{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:10px;
-    }
-
-    .gBadge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.72);
-      color:#111;
-      font-weight:900;
-      box-shadow:0 10px 22px rgba(0,0,0,.14);
-    }
-    [data-theme="dark"] .gBadge{
-      background: rgba(20,26,46,.72);
-      color: var(--text);
-      box-shadow:0 10px 22px rgba(0,0,0,.40);
-    }
-    .gBadge .stars{ letter-spacing:1px; }
-
-    .reviewsMarquee{
-      --gap:14px;
-      display:flex;
-      gap: var(--gap);
-      overflow:hidden;
-      padding:16px;
-      position:relative;
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    }
-
-    .reviewsTrack{
-      display:flex;
-      gap: var(--gap);
-      align-items:stretch;
-      flex-wrap:nowrap;
-      min-width:max-content;
-      animation: scrollX 32s linear infinite;
-    }
-
-    .reviewsMarquee:hover .reviewsTrack{
-      animation-play-state: paused;
-    }
-
-    @keyframes scrollX{
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    .reviewCard{
-      width: 320px;
-      max-width: 78vw;
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px 16px 14px;
-      box-shadow:0 12px 26px var(--shadow);
-      position:relative;
-    }
-
-    .reviewTop{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:10px;
-    }
-    .avatar{
-      width:36px; height:36px;
-      border-radius:50%;
+    .modalGrid{
       display:grid;
-      place-items:center;
-      font-weight:900;
-      background: linear-gradient(135deg, rgba(13,71,161,.22), rgba(106,27,154,.22));
-      border:1px solid var(--line);
-      flex:0 0 auto;
+      grid-template-columns: 1.1fr 1fr;
     }
-    .who{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
+    .modalImg{
+      width:100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      display:block;
+      background:#e2e8f0;
     }
-    .name{
-      font-weight:900;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      max-width: 190px;
+    .modalBody{
+      padding: 18px;
     }
-    .miniStars{
-      font-weight:900;
-      color: #fbc02d;
-      text-shadow: 0 6px 14px rgba(0,0,0,.18);
-      white-space:nowrap;
+    .modalTitle{
+      margin: 0;
+      text-align: center;
+      font-size: clamp(20px, 2.6vw, 28px);
+      font-weight: 900;
+      color: var(--dark);
     }
-    .reviewText{
-      margin:0;
-      line-height:1.7;
-      font-weight:700;
+    .modalSub{
+      margin-top: 6px;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .modalList{
+      margin-top: 12px;
+      padding-left: 18px;
       color: var(--muted);
     }
-
-    .reviewsActions{
+    .modalActions{
+      margin-top: 16px;
       display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:14px;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    .ghostBtn{
-      display:inline-block;
-      padding:10px 14px;
+    .modalClose{
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    .modalPrimary{
+      background: var(--primary);
+      color:#000;
+      border:0;
       border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.70);
-      color: var(--text);
-      font-weight:900;
+      padding: 10px 14px;
+      font-weight: 900;
       text-decoration:none;
-      box-shadow:0 10px 22px rgba(0,0,0,.12);
-      transition: transform .15s ease, opacity .15s ease;
-    }
-    [data-theme="dark"] .ghostBtn{ background: rgba(20,26,46,.70); box-shadow:0 10px 22px rgba(0,0,0,.40); }
-    .ghostBtn:hover{ opacity:.95; transform: translateY(-1px); }
-    .ghostBtn:active{ transform: translateY(0) scale(.99); }
-
-    @media (prefers-reduced-motion: reduce){
-      .reviewsTrack{ animation:none !important; }
-      .reviewsMarquee{ overflow:auto; mask-image:none; -webkit-mask-image:none; scroll-snap-type:x mandatory; }
-      .reviewCard{ scroll-snap-align:start; }
+      display:inline-block;
     }
 
+    /* FOOTER */
+    footer{
+      background:#0b1220;
+      color:#fff;
+      padding:40px 16px;
+      text-align:center;
+    }
+    footer p{ margin:6px 0; opacity:.95; }
+
+    /* =========================
+       ✅ RESPONSIVE (MOBILE)
+       ========================= */
+    @media (max-width: 1000px){
+      .galleryGrid{ grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px){
+      .galleryGrid{ grid-template-columns: repeat(2, 1fr); }
+      .ph img{ height: 200px; }
+      .hero{ background-attachment: scroll; }
+      .mapWrap iframe{ height: 420px; }
+    }
+    @media (max-width: 800px){
+      .modalGrid{ grid-template-columns: 1fr; }
+      .modalImg{ min-height: 240px; }
+    }
+    @media (max-width: 520px){
+      nav{ display:none; }
+      header{ padding: 12px 14px; }
+      .brand b{ font-size: 13px; }
+
+      section{ padding: 46px 12px; }
+      .card{ padding: 18px 14px; border-radius: 16px; }
+
+      .galleryGrid{ grid-template-columns: 1fr; gap: 14px; }
+      .ph img{ height: 210px; }
+      .cap{ padding: 12px; }
+
+      .tItem{ padding: 14px; }
+      .tCard{ padding: 14px; }
+
+      .mapWrap iframe{ height: 360px; }
+    }
+    /* ✅ prevent “stuck hover” on touch phones */
+    @media (hover: none){
+      .ph:hover{ transform: none; box-shadow: none; }
+      .ph:hover img{ transform: none; filter: none; }
+      .ph:hover .cap{ transform: translateY(6px); }
+    }
   </style>
 </head>
 
-<body data-theme="light" data-lang="ta">
-
-  <!-- Top Controls -->
-  <div class="topbar">
-    <button class="chip" id="langBtn" type="button" aria-label="Toggle language">
-      🌐 <span id="langText">தமிழ்</span>
-    </button>
-    <button class="chip" id="themeBtn" type="button" aria-label="Toggle theme">
-      🌗 <span id="themeText">Light</span>
-    </button>
-  </div>
-
-  <!-- Header -->
+<body>
   <header>
-    <div class="om" data-ta="ஓம்" data-en="Om">ஓம்</div>
-
-    <h2 data-ta="ஸ்ரீ அங்காளம்மன் துணை" data-en="With the blessings of Sri Angalamman">
-      ஸ்ரீ அங்காளம்மன் துணை
-    </h2>
-
-    <div class="sub" data-ta="Er. E. நல்லசிவம் M.E.Reflexologist," data-en="Er. E. Nallasivam, M.E.Reflexologist,">
-      Er. E. நல்லசிவம் M.E.,
+    <div class="brand">
+      <img src="https://cdn-icons-png.flaticon.com/128/2377/2377350.png" alt="Foot therapy icon" />
+      <b>பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</b>
     </div>
 
-    <h1
-      data-ta="பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்"
-      data-en="Foot Reflexology Rejuvenation Therapy Center">
-      பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்
-    </h1>
+    <nav>
+      <a href="#benefits">நன்மைகள்</a>
+      <a href="#treatments">சிகிச்சைகள்</a>
+      <a href="#booking">முன்பதிவு</a>
+      <a href="tel:9791406655">📞 Call</a>
+    </nav>
 
-    <div class="sub"
-      data-ta="(Foot Reflexology Rejuvenation Therapy Center)"
-      data-en="(Foot Reflexology Rejuvenation Therapy Center)">
-      (Foot Reflexology Rejuvenation Therapy Center)
-    </div>
-
-    <div class="sub"
-      data-ta="குயிலங்காடு தோட்டம், சூரியம்பாளையம்,<br/>கவுந்தப்பாடி to கோபி மெயின் ரோடு"
-      data-en="Kuyilangadu Thottam, Sooriyampalayam,<br/>Kavundapadi to Gobi Main Road">
-      குயிலங்காடு தோட்டம், சூரியம்பாளையம்,<br/>கவுந்தப்பாடி to கோபி மெயின் ரோடு
-    </div>
-
-    <div class="contact"
-      data-ta="📞 செல் : 97914 06655"
-      data-en="📞 Call : +91 97914 06655">
-      📞 செல் : 97914 06655
-    </div>
+    <a class="whatsapp" href="https://wa.me/919791406655">WhatsApp</a>
   </header>
 
-  <!-- Highlight -->
-  <section>
-    <div class="highlight"
-      data-ta="இந்த பாத அழுத்த சிகிச்சையின் மூலம்<br/>அனைத்து வியாதிகளுக்கும் நிவாரணம் பெறலாம்"
-      data-en="Through this foot reflexology therapy,<br/>you may find relief for many common health issues">
-      இந்த பாதஅழுத்த சிகிச்சையின் மூலம்<br/>
-      அனைத்து வியாதிகளுக்கும் நிவாரணம் பெறலாம்
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>பாத அழுத்த புத்துணர்வு<br>சிகிச்சை மையம்</h1>
+      <p>
+        Er. E. நல்லசிவம் M.E.Reflexologist<br />
+        Foot Reflexology Rejuvenation Therapy Center
+      </p>
+      <a class="cta" href="#treatments"> சிகிச்சைகளை பார்க்க</a>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section>
-    <div class="card gallery">
-      <h3 data-ta="🦶 சிகிச்சைகள்" data-en="🦶 Treatment">🦶 சிகிச்சைகள்</h3>
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <div class="card">
+      <h3>பாத அழுத்த சிகிச்சையின் நன்மைகள்</h3>
+      <ul class="list">
+        <li>✅ உடலில் உள்ள நரம்பு மண்டலத்தை சீராக்க உதவும்</li>
+        <li>✅ ரத்த ஓட்டத்தை மேம்படுத்த உதவும்</li>
+        <li>✅ மன அழுத்தம் மற்றும் சோர்வை குறைக்க உதவும்</li>
+        <li>✅ உறக்கம் மற்றும் தளர்வை மேம்படுத்த உதவும்</li>
+        <li>✅ உடல் புத்துணர்வு மற்றும் நல பராமரிப்பிற்கு உதவும்</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TREATMENTS / GALLERY (Clickable) -->
+  <section id="treatments">
+    <div class="card">
+      <h3>சிகிச்சைகள்</h3>
 
       <div class="galleryGrid">
-
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service1.jpg" alt="குழந்தை பாக்கியம் பெற!" loading="lazy">
-          <div class="cap" data-ta="குழந்தை பாக்கியம் பெற!" data-en="Baby Blessing">
-            குழந்தை பாக்கியம் பெற!
-            <small data-ta="சீரான வளர்ச்சி &amp; நலம்" data-en="Healthy growth &amp; wellness">சீரான வளர்ச்சி &amp; நலம்</small>
-          </div>
+        <div class="ph">
+          <button class="phBtn" type="button"
+            data-title="குழந்தை பாக்கியம் பெற!"
+            data-sub="குழந்தை பாக்கியம் பெற"
+            data-img="assets/images/service1.jpg"
+            data-points="உடல் புத்துணர்வு|மன தளர்வு|ரத்த ஓட்டம் மேம்பாடு|நலம் பராமரிப்பு">
+            <img src="assets/images/service1.jpg" alt="குழந்தை பாக்கியம் பெற சிகிச்சை" loading="lazy" />
+            <div class="cap">குழந்தை பாக்கியம் பெற!<small>சீரான வளர்ச்சி & நலம்</small></div>
+          </button>
         </div>
 
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service2.jpg" alt="கருப்பை பிரச்சனைகள் நீங்க!" loading="lazy">
-          <div class="cap" data-ta="கருப்பை பிரச்சனைகள் நீங்க!" data-en="Uterus Support">
-            கருப்பை பிரச்சனைகள் நீங்க!
-            <small data-ta="கருப்பை/ஹார்மோன் ஆதரவு" data-en="Uterus &amp; hormone support">கருப்பை/ஹார்மோன் ஆதரவு</small>
-          </div>
+        <div class="ph">
+          <button class="phBtn" type="button"
+            data-title="கருப்பை பிரச்சனைகள் நீங்க!"
+            data-sub="கருப்பை ஆதரவு"
+            data-img="assets/images/service2.jpg"
+            data-points="உடல் சமநிலை|மன தளர்வு|சோர்வு குறைப்பு|நலம் பராமரிப்பு">
+            <img src="assets/images/service2.jpg" alt="கருப்பை ஆதரவு சிகிச்சை" loading="lazy" />
+            <div class="cap">கருப்பை பிரச்சனைகள் நீங்க!<small>கருப்பை ஆதரவு</small></div>
+          </button>
         </div>
 
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service3.jpg" alt="நன்றாக தூக்கம் வர!" loading="lazy">
-          <div class="cap" data-ta="நன்றாக தூக்கம் வர!" data-en="Better Sleep">
-            நன்றாக தூக்கம் வர!
-            <small data-ta="தளர்வு &amp; நல்ல நித்திரை" data-en="Relaxation &amp; better sleep">தளர்வு &amp; நல்ல நித்திரை</small>
-          </div>
+        <div class="ph">
+          <button class="phBtn" type="button"
+            data-title="நன்றாக தூக்கம் வர!"
+            data-sub="தளர்வு & நித்திரை"
+            data-img="assets/images/service3.jpg"
+            data-points="உறக்கம் மேம்பாடு|மன அழுத்த குறைப்பு|உடல் தளர்வு|சோர்வு குறைப்பு">
+            <img src="assets/images/service3.jpg" alt="நன்றாக தூக்கம் வர சிகிச்சை" loading="lazy" />
+            <div class="cap">நன்றாக தூக்கம் வர!<small>தளர்வு & நித்திரை</small></div>
+          </button>
         </div>
 
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service4.jpg" alt="சிறுநீர்க்கல்" loading="lazy">
-          <div class="cap" data-ta="சிறுநீர்க்கல்" data-en="urinary stone">
-            மன அழுத்த குறைப்பு
-            <small data-ta="சோர்வு குறைப்பு" data-en="Reduce fatigue">சோர்வு குறைப்பு</small>
-          </div>
+        <div class="ph">
+          <button class="phBtn" type="button"
+            data-title="மன அழுத்த குறைப்பு"
+            data-sub="சோர்வு குறைப்பு"
+            data-img="assets/images/service4.jpg"
+            data-points="மன அமைதி|உடல் தளர்வு|உறக்கம் உதவி|நரம்பு மண்டலம் சீராக்குதல்">
+            <img src="assets/images/service4.jpg" alt="மன அழுத்த குறைப்பு சிகிச்சை" loading="lazy" />
+            <div class="cap">மன அழுத்த குறைப்பு<small>சோர்வு குறைப்பு</small></div>
+          </button>
         </div>
 
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service5.jpg" alt="சொட்டு மூத்திரம்" loading="lazy">
-          <div class="cap" data-ta="சொட்டு மூத்திரம்" data-en="Dripping Urine">
-            சொட்டு மூத்திரம்
-            <small data-ta="உடல் புத்துணர்வு" data-en="Body rejuvenation">உடல் புத்துணர்வு</small>
-          </div>
+        <div class="ph">
+          <button class="phBtn" type="button"
+            data-title="முழு உடல் புத்துணர்வு"
+            data-sub="நலம் பராமரிப்பு"
+            data-img="assets/images/service5.jpg"
+            data-points="உடல் புத்துணர்வு|ரத்த ஓட்டம் மேம்பாடு|தளர்வு|நலம் பராமரிப்பு">
+            <img src="assets/images/service5.jpg" alt="முழு உடல் புத்துணர்வு சிகிச்சை" loading="lazy" />
+            <div class="cap">முழு உடல் புத்துணர்வு<small>நலம் பராமரிப்பு</small></div>
+          </button>
         </div>
 
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service6.jpg" alt="வயிற்றுவலி" loading="lazy">
-          <div class="cap" data-ta="வயிற்றுவலி" data-en="Stomach Pain">
-            முழு உடல் புத்துணர்வு
-            <small data-ta="நலம் பராமரிப்பு" data-en="Wellness care">நலம் பராமரிப்பு</small>
-          </div>
+        <div class="ph">
+          <button class="phBtn" type="button"
+            data-title="முதுகு & கழுத்து வலி"
+            data-sub="இறுக்கம் குறைப்பு"
+            data-img="assets/images/service6.jpg"
+            data-points="இறுக்கம் குறைப்பு|தளர்வு மேம்பாடு|நடமாட்ட நலம்|மன அழுத்த குறைப்பு">
+            <img src="assets/images/service6.jpg" alt="முதுகு மற்றும் கழுத்து வலி சிகிச்சை" loading="lazy" />
+            <div class="cap">முதுகு & கழுத்து வலி<small>இறுக்கம் குறைப்பு</small></div>
+          </button>
         </div>
 
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service7.jpg" alt="முதுகு &amp; கழுத்து வலி தணிவு" loading="lazy">
-          <div class="cap" data-ta="முதுகு &amp; கழுத்து வலி தணிவு" data-en="Back &amp; Neck">
-            முதுகு &amp; கழுத்து வலி தணிவு
-            <small data-ta="இறுக்கம் குறைப்பு" data-en="Ease stiffness">இறுக்கம் குறைப்பு</small>
-          </div>
+        <div class="ph">
+          <button class="phBtn" type="button"
+            data-title="மூட்டு வலி தணிவு"
+            data-sub="நடமாட்ட தளர்வு"
+            data-img="assets/images/service7.jpg"
+            data-points="மூட்டு தளர்வு|சோர்வு குறைப்பு|உடல் சமநிலை|ரத்த ஓட்டம் உதவி">
+            <img src="assets/images/service7.jpg" alt="மூட்டு வலி தணிவு சிகிச்சை" loading="lazy" />
+            <div class="cap">மூட்டு வலி தணிவு<small>நடமாட்ட தளர்வு</small></div>
+          </button>
         </div>
 
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service8.jpg" alt="மூட்டு வலி தணிவு" loading="lazy">
-          <div class="cap" data-ta="மூட்டு வலி தணிவு" data-en="Joint Comfort">
-            மூட்டு வலி தணிவு
-            <small data-ta="நடமாட்ட தளர்வு" data-en="Movement comfort">நடமாட்ட தளர்வு</small>
-          </div>
+        <div class="ph">
+          <button class="phBtn" type="button"
+            data-title="தலைவலி / மைக்ரேன்"
+            data-sub="மன அமைதி"
+            data-img="assets/images/service8.jpg"
+            data-points="மன தளர்வு|உறக்கம் உதவி|சோர்வு குறைப்பு|நரம்பு மண்டலம் சீராக்குதல்">
+            <img src="assets/images/service8.jpg" alt="தலைவலி அல்லது மைக்ரேன் சிகிச்சை" loading="lazy" />
+            <div class="cap">தலைவலி / மைக்ரேன்<small>மன அமைதி</small></div>
+          </button>
         </div>
-
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service9.jpg" alt="தலைவலி / மைக்ரேன் நிவாரணம்" loading="lazy">
-          <div class="cap" data-ta="தலைவலி / மைக்ரேன் நிவாரணம்" data-en="Headache Support">
-            தலைவலி / மைக்ரேன் நிவாரணம்
-            <small data-ta="மன அமைதி" data-en="Mental calm">மன அமைதி</small>
-          </div>
-        </div>
-
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service10.jpg" alt="நரம்பு மண்டலம் சீராக்கம்" loading="lazy">
-          <div class="cap" data-ta="நரம்பு மண்டலம் சீராக்கம்" data-en="Nervous System">
-            நரம்பு மண்டலம் சீராக்கம்
-            <small data-ta="சீரான செயல்பாடு" data-en="Balanced function">சீரான செயல்பாடு</small>
-          </div>
-        </div>
-
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service11.jpg" alt="தைராய்டு" loading="lazy">
-          <div class="cap" data-ta="தைராய்டு" data-en="thyroid">
-            ஜீரணம் மேம்பாடு
-            <small data-ta="உடல் சமநிலை" data-en="Body balance">உடல் சமநிலை</small>
-          </div>
-        </div>
-
-        <div class="ph" tabindex="0">
-          <img src="assets/images/service12.jpg" alt="பாத எரிச்சல்" loading="lazy">
-          <div class="cap" data-ta="பாத எரிச்சல்" data-en="Foot Burning">
-            நாள் தோறும் உடல் பராமரிப்பு
-            <small data-ta="நலம் பராமரிப்பு" data-en="Wellness care">நலம் பராமரிப்பு</small>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Benefits + Services -->
-  <section>
-    <div class="grid">
-      <div class="card benefits">
-        <h3 data-ta="🦶 பாத அழுத்த சிகிச்சையின் நன்மைகள்" data-en="🦶 Benefits of Foot Reflexology">
-          🦶 பாத அழுத்த சிகிச்சையின் நன்மைகள்
-        </h3>
-
-        <ul>
-          <li data-ta="உடலில் உள்ள நரம்பு மண்டலத்தை சீராக்க உதவும்" data-en="Helps balance the nervous system">உடலில் உள்ள நரம்பு மண்டலத்தை சீராக்க உதவும்</li>
-          <li data-ta="ரத்த ஓட்டத்தை மேம்படுத்த உதவும்" data-en="Improves blood circulation">ரத்த ஓட்டத்தை மேம்படுத்த உதவும்</li>
-          <li data-ta="மன அழுத்தம் மற்றும் சோர்வை குறைக்க உதவும்" data-en="Reduces stress and fatigue">மன அழுத்தம் மற்றும் சோர்வை குறைக்க உதவும்</li>
-          <li data-ta="உறக்கம் மற்றும் தளர்வை மேம்படுத்த உதவும்" data-en="Supports better sleep and relaxation">உறக்கம் மற்றும் தளர்வை மேம்படுத்த உதவும்</li>
-          <li data-ta="உடல் புத்துணர்வு மற்றும் நல பராமரிப்பிற்கு உதவும்" data-en="Supports overall wellness and rejuvenation">உடல் புத்துணர்வு மற்றும் நல பராமரிப்பிற்கு உதவும்</li>
-        </ul>
-      </div>
-
-      <div class="card services">
-        <h3 data-ta="🧾 சேவைகள் நேரம் & கட்டணம் " data-en="🧾 Services  Timing & Price ">
-          🧾 சேவைகள் • கட்டணம் • நேரம்
-        </h3>
-
-        <ul>
-          <li data-ta="சேவை: பாத அழுத்த புத்துணர்வு சிகிச்சை" data-en="Service: Foot Reflexology Rejuvenation Therapy">சேவை: பாத அழுத்த புத்துணர்வு சிகிச்சை</li>
-          <li data-ta="நேரம்: 30 / 45 / 60 நிமிடங்கள்" data-en="Duration: 30 / 45 / 60 minutes">நேரம்: 30 / 45 / 60 நிமிடங்கள்</li>
-          <li data-ta="முன்பதிவு: WhatsApp மூலம்" data-en="Booking: via WhatsApp">முன்பதிவு: WhatsApp மூலம்</li>
-          <li data-ta="கட்டணம்: RS 200" data-en="Price: RS 200">கட்டணம்: </li>
-          <li data-ta="நேரங்கள்: காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை" data-en="Timings: 7.00 A.M TO 12.00 PM  ">நேரங்கள்: காலை/மாலை (உங்கள் நேரம் சேர்க்கவும்)</li>
-        </ul>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Note + Map -->
-  <section>
+  <!-- TESTIMONIALS (AUTO ROTATE) -->
+  <section id="testimonials">
     <div class="card">
-      <h3 data-ta="ℹ️ முன்பதிவு குறிப்பு" data-en="ℹ️ Appointment Note">ℹ️ முன்பதிவு குறிப்பு</h3>
+      <h3>🗣️ வாடிக்கையாளர் கருத்துகள்</h3>
 
-      <div style="text-align:center; line-height:1.9; font-size:1.06rem;">
-        <p
-          style="margin:0"
-          data-ta="குறிப்பு : இந்த பாத அழுத்த சிகிச்சைகளை மேற்கொள்ளுவதற்கு மணி நேரத்திற்கு முன்பும், பின்பும் உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது. அப்போது தான் சிகிச்சையின் முழு பலனையும் பெற முடியும்."
-          data-en="Note: For best results, please avoid food and water <strong>1 hour before</strong> and <strong>1 hour after</strong> the therapy. This helps you get the full benefit of the session.">
-          குறிப்பு : இந்த பாத அழுத்த சிகிச்சைகளை மேற்கொள்ளுவதற்கு மணி நேரத்திற்கு முன்பும், பின்பும் உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது.
-          அப்போது தான் சிகிச்சையின் முழு பலனையும் பெற முடியும்.
-        </p>
+      <div class="tWrap">
+        <div class="tCarousel" id="tCarousel">
+          <div class="tTrack" id="tTrack">
+            <div class="tItem">
+              <div class="tCard">
+                <div class="tQuote">“சிகிச்சைக்கு பிறகு உடல் நன்றாக தளர்வாக இருந்தது. மன அழுத்தமும் குறைந்தது.”</div>
+                <div class="tMeta"><span>ராஜேஷ்</span><span class="tStars">★★★★★</span></div>
+              </div>
+            </div>
+
+            <div class="tItem">
+              <div class="tCard">
+                <div class="tQuote">“தூக்கம் சரியாக வந்தது. காலை எழுந்ததும் புத்துணர்வு இருந்தது.”</div>
+                <div class="tMeta"><span>கல்யாணி</span><span class="tStars">★★★★★</span></div>
+              </div>
+            </div>
+
+            <div class="tItem">
+              <div class="tCard">
+                <div class="tQuote">“முதுகு வலி குறைந்தது. தொடர்ந்து வந்தால் மேலும் நல்லது போல உள்ளது.”</div>
+                <div class="tMeta"><span>முருகன்</span><span class="tStars">★★★★★</span></div>
+              </div>
+            </div>
+
+            <div class="tItem">
+              <div class="tCard">
+                <div class="tQuote">“சேவை நன்றாக இருந்தது. நேரமும் ஒழுங்காக வைத்திருந்தார்கள்.”</div>
+                <div class="tMeta"><span>பிரியா</span><span class="tStars">★★★★★</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tDots" id="tDots"></div>
+
+        <div class="tBtns">
+          <button class="tBtn" type="button" id="tPrev">◀︎</button>
+          <button class="tBtn" type="button" id="tNext">▶︎</button>
+        </div>
       </div>
-    </div>
-
-         </a>
     </div>
   </section>
 
-  <!-- ⭐ Google Reviews -->
-  <section>
-    <div class="card reveal" id="reviews">
-      <div class="reviewsHeader">
-        <h3 style="margin:0;" data-ta="⭐ வாடிக்கையாளர் கருத்துகள்" data-en="⭐ Customer Reviews">⭐ வாடிக்கையாளர் கருத்துகள்</h3>
-        <div class="gBadge" aria-label="Google rating badge">
-          <span>Google</span>
-          <span class="stars">★★★★★</span>
-          <span class="muted" style="font-weight:900;">(Reviews)</span>
-        </div>
-      </div>
+  <!-- GOOGLE REVIEWS -->
+  <section id="reviews">
+    <div class="card">
+      <h3>⭐ Google Reviews</h3>
 
-      <!-- Embedded Google place (shows rating/reviews in map UI) -->
-      <div class="reviewsBox reveal">
+      <div class="mapWrap">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.5771388022636!2d77.51567327574129!3d11.438207246637232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93f5aff4ac153%3A0x7aeff8450a845d1c!2z4K6q4K6-4K6kIOCuheCutOCvgeCupOCvjeCupCDgrqrgr4HgrqTgr43grqTgr4HgrqPgrrDgr43grrXgr4Eg4K6a4K6_4K6V4K6_4K6a4K-N4K6a4K-IIOCuruCviOCur-CuruCvjShGb290IFJlZmxleG9sb2d5IFJlanV2ZW5hdGlvbiBUaGVycHkgQ2VudGVyKSwgZ29iaQ!5e0!3m2!1sen!2sin!4v1769856289999!5m2!1sen!2sin"
-          width="100%"
-          height="420"
-          style="border:0;"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.4641097844956!2d77.51776707574146!3d11.446389246477594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93f5aff4ac153%3A0x7aeff8450a845d1c!2z4K6o4K6x4K-N4K6q4K-B4K614K6_IOCuquCuvuCupCDgroXgrrTgr4HgrqTgr43grqQg4K6q4K-B4K6k4K-N4K6k4K-B4K6j4K6w4K-N4K614K-BIOCumuCuv-CuleCuv-CumuCvjeCumuCviCDgrq7gr4jgrq_grq7gr40oIE5hcnB1dmkgRm9vdCBSZWZsZXhvbG9neSBSZWp1dmVuYXRpb24gVGhlcnB5IENlbnRlciksIGdvYmk!5e0!3m2!1sen!2sin!4v1770558562969!5m2!1sen!2sin"
+          allowfullscreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          aria-label="Google reviews map embed">
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
 
-      <!-- Auto scrolling review cards (editable text) -->
-      <div class="reviewsBox" style="margin-top:16px;">
-        <div class="reviewsMarquee" aria-label="Customer review highlights">
-          <div class="reviewsTrack">
-            <!-- set A -->
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">A</div>
-                  <div class="name" data-ta="அருணா" data-en="Aruna">அருணா</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="மிக நல்ல சிகிச்சை. உடல் சோர்வு குறைந்தது. நன்றாக தூக்கம் வந்தது."
-                 data-en="Very good therapy. My fatigue reduced and I slept better.">
-                மிக நல்ல சிகிச்சை. உடல் சோர்வு குறைந்தது. நன்றாக தூக்கம் வந்தது.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">K</div>
-                  <div class="name" data-ta="கார்த்திக்" data-en="Karthik">கார்த்திக்</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="மனஅழுத்தம் குறைந்து உடல் லேசாக இருந்தது. சேவை மிக அருமை."
-                 data-en="Stress reduced and I felt lighter. Excellent service.">
-                மனஅழுத்தம் குறைந்து உடல் லேசாக இருந்தது. சேவை மிக அருமை.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">S</div>
-                  <div class="name" data-ta="சரவணன்" data-en="Saravanan">சரவணன்</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="முதுகு & கழுத்து வலி தணிந்தது. சுத்தமாகவும் நன்றாகவும் வைத்திருக்கிறார்கள்."
-                 data-en="Back & neck pain eased. Clean place and well maintained.">
-                முதுகு & கழுத்து வலி தணிந்தது. சுத்தமாகவும் நன்றாகவும் வைத்திருக்கிறார்கள்.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">P</div>
-                  <div class="name" data-ta="பிரியா" data-en="Priya">பிரியா</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="உறக்கம் சீரானது. உடல் புத்துணர்வு கிடைத்தது. ரெகமெண்ட் செய்கிறேன்."
-                 data-en="My sleep improved and I felt rejuvenated. Highly recommended.">
-                உறக்கம் சீரானது. உடல் புத்துணர்வு கிடைத்தது. ரெகமெண்ட் செய்கிறேன்.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">M</div>
-                  <div class="name" data-ta="முரளி" data-en="Murali">முரளி</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="சேவை நேரம் சரியாகவும் விளக்கமாகவும் செய்தார்கள். நன்றாக பயன் இருந்தது."
-                 data-en="They explained clearly and the session was on time. Great benefits.">
-                சேவை நேரம் சரியாகவும் விளக்கமாகவும் செய்தார்கள். நன்றாக பயன் இருந்தது.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">J</div>
-                  <div class="name" data-ta="ஜெயா" data-en="Jaya">ஜெயா</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="அமைதியான சூழல். சிகிச்சை முடிந்ததும் உடல் ரிலாக்ஸ் ஆனது."
-                 data-en="Peaceful environment. Felt relaxed right after the therapy.">
-                அமைதியான சூழல். சிகிச்சை முடிந்ததும் உடல் ரிலாக்ஸ் ஆனது.
-              </p>
-            </div>
-
-            <!-- set B (duplicate for seamless loop) -->
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">A</div>
-                  <div class="name" data-ta="அருணா" data-en="Aruna">அருணா</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="மிக நல்ல சிகிச்சை. உடல் சோர்வு குறைந்தது. நன்றாக தூக்கம் வந்தது."
-                 data-en="Very good therapy. My fatigue reduced and I slept better.">
-                மிக நல்ல சிகிச்சை. உடல் சோர்வு குறைந்தது. நன்றாக தூக்கம் வந்தது.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">K</div>
-                  <div class="name" data-ta="கார்த்திக்" data-en="Karthik">கார்த்திக்</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="மனஅழுத்தம் குறைந்து உடல் லேசாக இருந்தது. சேவை மிக அருமை."
-                 data-en="Stress reduced and I felt lighter. Excellent service.">
-                மனஅழுத்தம் குறைந்து உடல் லேசாக இருந்தது. சேவை மிக அருமை.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">S</div>
-                  <div class="name" data-ta="சரவணன்" data-en="Saravanan">சரவணன்</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="முதுகு & கழுத்து வலி தணிந்தது. சுத்தமாகவும் நன்றாகவும் வைத்திருக்கிறார்கள்."
-                 data-en="Back & neck pain eased. Clean place and well maintained.">
-                முதுகு & கழுத்து வலி தணிந்தது. சுத்தமாகவும் நன்றாகவும் வைத்திருக்கிறார்கள்.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">P</div>
-                  <div class="name" data-ta="பிரியா" data-en="Priya">பிரியா</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="உறக்கம் சீரானது. உடல் புத்துணர்வு கிடைத்தது. ரெகமெண்ட் செய்கிறேன்."
-                 data-en="My sleep improved and I felt rejuvenated. Highly recommended.">
-                உறக்கம் சீரானது. உடல் புத்துணர்வு கிடைத்தது. ரெகமெண்ட் செய்கிறேன்.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">M</div>
-                  <div class="name" data-ta="முரளி" data-en="Murali">முரளி</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="சேவை நேரம் சரியாகவும் விளக்கமாகவும் செய்தார்கள். நன்றாக பயன் இருந்தது."
-                 data-en="They explained clearly and the session was on time. Great benefits.">
-                சேவை நேரம் சரியாகவும் விளக்கமாகவும் செய்தார்கள். நன்றாக பயன் இருந்தது.
-              </p>
-            </div>
-
-            <div class="reviewCard">
-              <div class="reviewTop">
-                <div class="who">
-                  <div class="avatar">J</div>
-                  <div class="name" data-ta="ஜெயா" data-en="Jaya">ஜெயா</div>
-                </div>
-                <div class="miniStars">★★★★★</div>
-              </div>
-              <p class="reviewText" data-ta="அமைதியான சூழல். சிகிச்சை முடிந்ததும் உடல் ரிலாக்ஸ் ஆனது."
-                 data-en="Peaceful environment. Felt relaxed right after the therapy.">
-                அமைதியான சூழல். சிகிச்சை முடிந்ததும் உடல் ரிலாக்ஸ் ஆனது.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="reviewsActions">
-        <a class="dirBtn" href="https://www.google.com/maps?cid=8858571967473933596" target="_blank" rel="noopener">
-          ⭐ <span data-ta="Google Reviews பார்க்க" data-en="View on Google Reviews">Google Reviews பார்க்க</span>
-        </a>
-        <a class="ghostBtn" href="https://www.google.com/maps?cid=8858571967473933596&hl=en&review=1" target="_blank" rel="noopener">
-          ✍️ <span data-ta="Review எழுத" data-en="Write a Review">Review எழுத</span>
+      <div class="centerBtn">
+        <a class="whatsapp"
+           href="https://www.google.com/maps/place/?q=place_id:ChIJU8FK_1o_qTsRHfWECkX47no"
+           target="_blank" rel="noopener">
+          ✍️ Add a Review
         </a>
       </div>
     </div>
   </section>
 
+  <!-- BOOKING -->
+  <section id="booking">
+    <div class="card">
+      <h3>சிகிச்சை நேரம் & கட்டணம்</h3>
+
+      <div class="info">
+        <p><b>சிகிச்சை:</b> பாத அழுத்த புத்துணர்வு சிகிச்சை</p>
+        <p><b>நேரம்:</b> 30 / 45 / 60 நிமிடங்கள்</p>
+        <p><b>முன்பதிவு:</b> WhatsApp மூலம்</p>
+        <p><b>கட்டணம்:</b> ரூ 200</p>
+        <p><b>நேரங்கள்:</b> காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை</p>
+      </div>
+
+      <div class="note">
+        <b>முன்பதிவு குறிப்பு :</b>
+        <p style="margin-top:8px;">
+          இந்த பாத அழுத்த சிகிச்சைகளை மேற்கொள்ளுவதற்கு மணி நேரத்திற்கு முன்பும்,
+          பின்பும் உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது.
+          அப்போது தான் சிகிச்சையின் முழு பலனையும் பெற முடியும்.
+        </p>
+      </div>
+
+      <a class="whatsapp" style="margin-top:18px;" href="https://wa.me/919791406655">
+        WhatsApp மூலம் முன்பதிவு
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    © 2026 <span data-ta="பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்" data-en="Foot Reflexology Therapy Center">பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</span>
+    <p><b>Er. E. நல்லசிவம் M.E.Reflexologist</b></p>
+    <p>குயிலங்காடு தோட்டம், சூரியம்பாளையம்</p>
+    <p>கவுந்தப்பாடி to கோபி மெயின் ரோடு</p>
+    <p>📞 97914 06655</p>
   </footer>
 
-  <a class="whatsapp"
-     id="waBtn"
-     href="https://wa.me/919791406655?text=வணக்கம்,%20பாத%20அழுத்த%20சிகிச்சைக்கு%20முன்பதிவு%20செய்ய%20விரும்புகிறேன்.%20Location:%20https://www.google.com/maps?q=11.438442,77.518272"
-     target="_blank" rel="noopener">
-    WhatsApp – <span data-ta="முன்பதிவு" data-en="Book Now">முன்பதிவு</span>
-  </a>
+  <!-- DETAILS MODAL -->
+  <div class="modalBack" id="tModal" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <div class="modalGrid">
+        <img class="modalImg" id="mImg" alt="Treatment image" />
+        <div class="modalBody">
+          <h4 class="modalTitle" id="mTitle"></h4>
+          <div class="modalSub" id="mSub"></div>
+
+          <ul class="modalList" id="mList"></ul>
+
+          <div class="modalActions">
+            <a class="modalPrimary" id="mBook" href="https://wa.me/919791406655" target="_blank" rel="noopener">
+              WhatsApp Booking
+            </a>
+            <button class="modalClose" type="button" id="mClose">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
-    // ===== Theme =====
-    function applyTheme(theme){
-      document.body.setAttribute("data-theme", theme);
-      document.getElementById("themeText").textContent = theme === "dark" ? "Dark" : "Light";
-      localStorage.setItem("site_theme", theme);
-    }
-
-    // ===== Language =====
-    function applyLanguage(lang){
-      document.body.setAttribute("data-lang", lang);
-      document.documentElement.lang = lang === "en" ? "en" : "ta";
-
-      const nodes = document.querySelectorAll("[data-ta][data-en]");
-      nodes.forEach(el => {
-        // Using innerHTML intentionally (needed for <br/> and <strong> in translations).
-        el.innerHTML = (lang === "en") ? el.getAttribute("data-en") : el.getAttribute("data-ta");
-      });
-
-      document.getElementById("langText").textContent = (lang === "en") ? "English" : "தமிழ்";
-
-      // Update WhatsApp text in selected language
-      const mapLink = "https://www.google.com/maps?q=11.438442,77.518272";
-      const taMsg = "வணக்கம், பாத அழுத்த சிகிச்சைக்கு முன்பதிவு செய்ய விரும்புகிறேன். Location: " + mapLink;
-      const enMsg = "Hello, I would like to book an appointment for Foot Reflexology. Location: " + mapLink;
-
-      const wa = document.getElementById("waBtn");
-      const msg = (lang === "en") ? enMsg : taMsg;
-      wa.href = "https://wa.me/919791406655?text=" + encodeURIComponent(msg);
-
-      localStorage.setItem("site_lang", lang);
-    }
-
-    // ===== Buttons =====
-    document.getElementById("themeBtn").addEventListener("click", () => {
-      const current = document.body.getAttribute("data-theme");
-      applyTheme(current === "dark" ? "light" : "dark");
-    });
-
-    document.getElementById("langBtn").addEventListener("click", () => {
-      const current = document.body.getAttribute("data-lang");
-      applyLanguage(current === "en" ? "ta" : "en");
-    });
-
-    // ===== Initial =====
-    const savedTheme = localStorage.getItem("site_theme");
-    const savedLang  = localStorage.getItem("site_lang");
-
-    if(savedTheme){
-      applyTheme(savedTheme);
-    } else {
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      applyTheme(prefersDark ? "dark" : "light");
-    }
-
-    applyLanguage(savedLang || "ta");
-
-    // ===== Gallery reveal animation =====
-    const imgs = document.querySelectorAll(".ph img");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if(e.isIntersecting){
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    }, {threshold: 0.12});
-
-    imgs.forEach(img => io.observe(img));
-
-    // ===== Reveal on scroll (auto fade-in for sections/cards) =====
-    const revealNodes = document.querySelectorAll(".reveal");
-    const rio = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if(e.isIntersecting){
-          e.target.classList.add("in");
-          rio.unobserve(e.target);
-        }
-      });
-    }, {threshold: 0.14});
-
-    revealNodes.forEach(n => rio.observe(n));
-
-    // ===== Seamless marquee width safety =====
-    // If track is too short (rare), slow down less by extending duration.
-    const track = document.querySelector(".reviewsTrack");
-    if(track){
-      const trackWidth = track.scrollWidth;
-      const viewWidth = track.parentElement?.clientWidth || 1;
-      if(trackWidth < viewWidth * 2){
-        track.style.animationDuration = "44s";
+    // Reveal animation for gallery + fallback
+    (function(){
+      const items = document.querySelectorAll(".ph");
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
+          });
+        }, { threshold: 0.15 });
+        items.forEach((el) => io.observe(el));
+      } else {
+        items.forEach((el) => el.classList.add("show"));
       }
-    }
+    })();
+  </script>
 
+  <script>
+    // Auto-rotating testimonials (dots + arrows + swipe)
+    (function(){
+      const track = document.getElementById("tTrack");
+      const carousel = document.getElementById("tCarousel");
+      const dotsWrap = document.getElementById("tDots");
+      const prevBtn = document.getElementById("tPrev");
+      const nextBtn = document.getElementById("tNext");
+      if (!track || !carousel || !dotsWrap || !prevBtn || !nextBtn) return;
+
+      const slides = Array.from(track.children);
+      let index = 0;
+      let timer = null;
+      const intervalMs = 3500;
+
+      slides.forEach((_, i) => {
+        const d = document.createElement("button");
+        d.type = "button";
+        d.className = "tDot" + (i === 0 ? " active" : "");
+        d.addEventListener("click", () => goTo(i));
+        dotsWrap.appendChild(d);
+      });
+
+      const dots = Array.from(dotsWrap.children);
+
+      function update(){
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle("active", i === index));
+      }
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        update();
+        restart();
+      }
+      function next(){ goTo(index + 1); }
+      function prev(){ goTo(index - 1); }
+
+      function start(){ stop(); timer = setInterval(next, intervalMs); }
+      function stop(){ if (timer) clearInterval(timer); timer = null; }
+      function restart(){ start(); }
+
+      nextBtn.addEventListener("click", next);
+      prevBtn.addEventListener("click", prev);
+
+      carousel.addEventListener("mouseenter", stop);
+      carousel.addEventListener("mouseleave", start);
+      carousel.addEventListener("touchstart", stop, {passive:true});
+      carousel.addEventListener("touchend", start, {passive:true});
+
+      let x0 = null;
+      carousel.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, {passive:true});
+      carousel.addEventListener("touchmove", (e) => {
+        if (x0 === null) return;
+        const dx = e.touches[0].clientX - x0;
+        if (Math.abs(dx) > 40){
+          dx < 0 ? next() : prev();
+          x0 = null;
+        }
+      }, {passive:true});
+      carousel.addEventListener("touchend", () => { x0 = null; }, {passive:true});
+
+      update();
+      start();
+    })();
+  </script>
+
+  <script>
+    // Treatment details modal (Title comes from data-title)
+    (function(){
+      const modal = document.getElementById("tModal");
+      const mImg  = document.getElementById("mImg");
+      const mTitle= document.getElementById("mTitle");
+      const mSub  = document.getElementById("mSub");
+      const mList = document.getElementById("mList");
+      const mClose= document.getElementById("mClose");
+      const mBook = document.getElementById("mBook");
+      if (!modal || !mImg || !mTitle || !mSub || !mList || !mClose || !mBook) return;
+
+      let lastFocus = null;
+
+      function openModal(btn){
+        lastFocus = document.activeElement;
+
+        const title  = btn.dataset.title || "Details";
+        const sub    = btn.dataset.sub || "";
+        const img    = btn.dataset.img || "";
+        const points = (btn.dataset.points || "").split("|").map(s => s.trim()).filter(Boolean);
+
+        mTitle.textContent = title;       // ✅ Title
+        mSub.textContent = sub;
+        mImg.src = img;
+
+        mList.innerHTML = "";
+        points.forEach(p => {
+          const li = document.createElement("li");
+          li.textContent = p;
+          mList.appendChild(li);
+        });
+
+        // Optional: prefill WhatsApp message with title
+        const msg = encodeURIComponent(`வணக்கம்! "${title}" சிகிச்சை குறித்து தகவல் வேண்டும் / முன்பதிவு செய்ய வேண்டும்.`);
+        mBook.href = `https://wa.me/919791406655?text=${msg}`;
+
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden", "false");
+        mClose.focus();
+      }
+
+      function closeModal(){
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden", "true");
+        mImg.src = "";
+        if (lastFocus) lastFocus.focus();
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".phBtn");
+        if (btn) openModal(btn);
+      });
+
+      mClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
+      });
+    })();
   </script>
 </body>
 </html>
