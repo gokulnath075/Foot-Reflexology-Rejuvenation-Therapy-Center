@@ -1,845 +1,1085 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="ta" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</title>
-  <meta name="description" content="பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் - Reflexology Rejuvenation Therapy Center. முன்பதிவு WhatsApp மூலம்." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் | சூரியம்பாளையம் - Er. E. நல்லசிவம் M.E., Reflexologist</title>
+  
+  <meta name="description" content="நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம், சூரியம்பாளையம் (கவுந்தப்பாடி to கோபி ரோடு). Er. E. நல்லசிவம் M.E., Reflexologist. கட்டணம்: ரூ 200. மூட்டுவலி நிவாரண எண்ணெய்: ரூ 100. செல்: 9791406655.">
+  <meta name="keywords" content="நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம், Foot Reflexology Sooriyampalayam, Er E Nallasivam Reflexologist, கோபி பாத அழுத்த சிகிச்சை, நற்புவி மூட்டுவலி நிவாரண எண்ணெய், Kavindapadi Gobi Reflexology">
+  <meta name="author" content="Er. E. நல்லசிவம் M.E., Reflexologist">
+  <meta name="theme-color" content="#1a4d2e">
 
-  <style>
-    :root{
-      --primary:#25c7b7;
-      --dark:#0f172a;
-      --bg:#f0fbfb;
-      --card:#ffffff;
-      --muted:#334155;
-      --shadow: 0 12px 30px rgba(2, 6, 23, 0.10);
-      --radius: 18px;
-      --border:#e2e8f0;
-    }
+  <!-- Open Graph -->
+  <meta property="og:title" content="நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் | சூரியம்பாளையம்">
+  <meta property="og:description" content="“அகத்தின் அழகு முகத்தில் தெரியும்” அதுபோல அக உடலின் ஆரோக்கியம் கால் பாதங்களில் தெரியும். கட்டணம்: ரூ 200. செல்: 9791406655.">
+  <meta property="og:image" content="assets/narpuvi-center-flyer.jpg">
+  <meta property="og:type" content="website">
 
-    *{ margin:0; padding:0; box-sizing:border-box; }
-    body{
-      background:var(--bg);
-      color:var(--dark);
-      font-family: system-ui, -apple-system, "Noto Sans Tamil", "Latha", Arial, sans-serif;
-      line-height:1.6;
-    }
+  <!-- Google Fonts: Inter / Plus Jakarta Sans & Noto Sans Tamil / Mukta Malar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    /* HEADER */
-    header{
-      position:sticky; top:0; z-index:100;
-      background:#0b1220; color:#fff;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 18px;
-      gap:12px;
-    }
-    .brand{ display:flex; gap:12px; align-items:center; min-width: 200px; }
-    .brand img{ width:40px; height:40px; }
-    .brand b{ font-size:14px; line-height:1.2; }
-    nav{ display:flex; gap:18px; flex-wrap:wrap; }
-    nav a{ color:#fff; text-decoration:none; font-size:14px; opacity:.95; }
-    nav a:hover{ opacity:1; text-decoration:underline; }
-    .whatsapp{
-      background:var(--primary); color:#000;
-      padding:9px 14px; border-radius:999px;
-      font-weight:800; text-decoration:none;
-      white-space:nowrap;
-      display:inline-block;
-    }
-
-    /* HERO */
-    .hero{
-      min-height:calc(100vh - 70px);
-      display:flex; align-items:center; justify-content:center;
-      padding:40px 16px; text-align:center; color:#fff;
-      background-image:
-        linear-gradient(rgba(15,23,42,.75), rgba(15,23,42,.85)),
-        url("https://images.squarespace-cdn.com/content/v1/584a1f6c20099e929d1b0900/1499401853967-VQ08L05B0TTUSVA3DEQM/bigstock-Acupressure-reflexology-87442658.jpg?format=2500w");
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-    }
-    .hero h1{
-      font-size: clamp(28px, 5vw, 46px);
-      line-height:1.25;
-      font-weight:900;
-      letter-spacing:.2px;
-    }
-    .hero p{
-      max-width: 760px;
-      margin: 14px auto 22px;
-      opacity:.95;
-      font-size: clamp(14px, 2vw, 18px);
-    }
-    .cta{
-      display:inline-block;
-      background:var(--primary);
-      padding:12px 22px;
-      border-radius:999px;
-      font-weight:900;
-      text-decoration:none;
-      color:#000;
-    }
-
-    /* SECTIONS */
-    section{ padding:70px 16px; }
-    .card{
-      max-width:1100px;
-      margin: 0 auto;
-      background:var(--card);
-      padding: 26px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    /* ✅ CENTER ALL SECTION TITLES */
-    .card h3{
-      font-size: clamp(20px, 2.4vw, 28px);
-      margin-bottom: 18px;
-      text-align: center;
-      font-weight: 900;
-      letter-spacing: .2px;
-    }
-
-    /* BENEFITS LIST */
-    .list{ display:grid; gap:10px; margin-top:10px; }
-    .list li{
-      list-style:none;
-      font-size: clamp(15px, 2vw, 18px);
-      color: var(--muted);
-      padding: 6px 0;
-    }
-
-    /* =========================
-       ✅ GALLERY + HOVER EFFECTS
-       ========================= */
-    .galleryGrid{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:16px;
-    }
-
-    .ph{
-      position:relative;
-      border-radius:16px;
-      overflow:hidden;
-      background:#e2e8f0;
-      opacity:0;
-      transform:translateY(18px);
-      transition: transform .25s ease, box-shadow .25s ease, opacity .6s ease;
-      will-change: transform;
-    }
-    .ph.show{ opacity:1; transform:translateY(0); }
-
-    .ph img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      display:block;
-      transform: scale(1);
-      transition: transform .35s ease, filter .35s ease;
-    }
-
-    .ph::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.18));
-      opacity:1;
-      transition: opacity .35s ease;
-      pointer-events:none;
-    }
-
-    .cap{
-      position:absolute;
-      left:0; right:0; bottom:0;
-      padding:14px;
-      color:#fff;
-      font-weight:900;
-      text-shadow: 0 2px 10px rgba(0,0,0,.35);
-      transform: translateY(6px);
-      transition: transform .35s ease;
-      pointer-events:none; /* so clicking works on button */
-    }
-    .cap small{
-      display:block;
-      font-size:12px;
-      opacity:.92;
-      margin-top:4px;
-      font-weight:600;
-    }
-
-    .ph:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(2, 6, 23, 0.18);
-    }
-    .ph:hover img{
-      transform: scale(1.06);
-      filter: saturate(1.1) contrast(1.05);
-    }
-    .ph:hover::after{ opacity: .85; }
-    .ph:hover .cap{ transform: translateY(0); }
-
-    /* Make cards clickable without changing layout */
-    .phBtn{
-      all: unset;
-      display:block;
-      width:100%;
-      cursor:pointer;
-    }
-    .phBtn:focus-visible{
-      outline: 3px solid rgba(37,199,183,.6);
-      outline-offset: 3px;
-      border-radius:16px;
-    }
-
-    /* BOOKING TEXT */
-    .info p{ margin: 8px 0; color: var(--muted); }
-    .note{
-      margin-top: 14px;
-      padding: 14px;
-      border-radius: 14px;
-      background: #f8fafc;
-      color: var(--muted);
-      border: 1px solid var(--border);
-    }
-
-    /* =========================
-       ✅ TESTIMONIALS (AUTO ROTATE)
-       ========================= */
-    .tWrap{ max-width: 900px; margin: 0 auto; }
-    .tCarousel{
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #fff;
-    }
-    .tTrack{
-      display: flex;
-      transition: transform .5s ease;
-      will-change: transform;
-    }
-    .tItem{
-      min-width: 100%;
-      padding: 18px;
-    }
-    .tCard{
-      border-radius: 14px;
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      padding: 16px;
-    }
-    .tQuote{
-      color: var(--muted);
-      font-size: clamp(15px, 2vw, 18px);
-    }
-    .tMeta{
-      margin-top: 12px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      color: #334155;
-      font-weight: 900;
-    }
-    .tStars{ letter-spacing: 1px; }
-    .tDots{
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .tDot{
-      width: 10px; height: 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #e2e8f0;
-      cursor: pointer;
-    }
-    .tDot.active{ background: var(--primary); }
-    .tBtns{
-      display:flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .tBtn{
-      border: 1px solid var(--border);
-      background: #fff;
-      border-radius: 999px;
-      padding: 10px 14px;
-      cursor: pointer;
-      font-weight: 900;
-    }
-    .tBtn:active{ transform: scale(.98); }
-
-    /* =========================
-       ✅ GOOGLE REVIEWS (MAP EMBED)
-       ========================= */
-    .mapWrap{
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      background:#fff;
-    }
-    .mapWrap iframe{
-      width:100%;
-      height:450px;
-      border:0;
-      display:block;
-    }
-    .centerBtn{ text-align:center; margin-top:14px; }
-
-    /* =========================
-       ✅ DETAILS MODAL
-       ========================= */
-    .modalBack{
-      position: fixed;
-      inset: 0;
-      background: rgba(2,6,23,.65);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      z-index: 9999;
-    }
-    .modalBack.show{ display: flex; }
-
-    .modalBox{
-      width: min(920px, 100%);
-      background: #fff;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 20px 60px rgba(2,6,23,.25);
-    }
-
-    .modalGrid{
-      display:grid;
-      grid-template-columns: 1.1fr 1fr;
-    }
-    .modalImg{
-      width:100%;
-      height: 100%;
-      min-height: 320px;
-      object-fit: cover;
-      display:block;
-      background:#e2e8f0;
-    }
-    .modalBody{
-      padding: 18px;
-    }
-    .modalTitle{
-      margin: 0;
-      text-align: center;
-      font-size: clamp(20px, 2.6vw, 28px);
-      font-weight: 900;
-      color: var(--dark);
-    }
-    .modalSub{
-      margin-top: 6px;
-      text-align: center;
-      color: var(--muted);
-      font-weight: 700;
-    }
-    .modalList{
-      margin-top: 12px;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-    .modalActions{
-      margin-top: 16px;
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .modalClose{
-      border: 1px solid var(--border);
-      background: #fff;
-      border-radius: 999px;
-      padding: 10px 14px;
-      cursor: pointer;
-      font-weight: 900;
-    }
-    .modalPrimary{
-      background: var(--primary);
-      color:#000;
-      border:0;
-      border-radius:999px;
-      padding: 10px 14px;
-      font-weight: 900;
-      text-decoration:none;
-      display:inline-block;
-    }
-
-    /* FOOTER */
-    footer{
-      background:#0b1220;
-      color:#fff;
-      padding:40px 16px;
-      text-align:center;
-    }
-    footer p{ margin:6px 0; opacity:.95; }
-
-    /* =========================
-       ✅ RESPONSIVE (MOBILE)
-       ========================= */
-    @media (max-width: 1000px){
-      .galleryGrid{ grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 900px){
-      .galleryGrid{ grid-template-columns: repeat(2, 1fr); }
-      .ph img{ height: 200px; }
-      .hero{ background-attachment: scroll; }
-      .mapWrap iframe{ height: 420px; }
-    }
-    @media (max-width: 800px){
-      .modalGrid{ grid-template-columns: 1fr; }
-      .modalImg{ min-height: 240px; }
-    }
-    @media (max-width: 520px){
-      nav{ display:none; }
-      header{ padding: 12px 14px; }
-      .brand b{ font-size: 13px; }
-
-      section{ padding: 46px 12px; }
-      .card{ padding: 18px 14px; border-radius: 16px; }
-
-      .galleryGrid{ grid-template-columns: 1fr; gap: 14px; }
-      .ph img{ height: 210px; }
-      .cap{ padding: 12px; }
-
-      .tItem{ padding: 14px; }
-      .tCard{ padding: 14px; }
-
-      .mapWrap iframe{ height: 360px; }
-    }
-    /* ✅ prevent “stuck hover” on touch phones */
-    @media (hover: none){
-      .ph:hover{ transform: none; box-shadow: none; }
-      .ph:hover img{ transform: none; filter: none; }
-      .ph:hover .cap{ transform: translateY(6px); }
-    }
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header>
-    <div class="brand">
-      <img src="https://cdn-icons-png.flaticon.com/128/2377/2377350.png" alt="Foot therapy icon" />
-      <b>பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</b>
-    </div>
 
-    <nav>
-      <a href="#benefits">நன்மைகள்</a>
-      <a href="#treatments">சிகிச்சைகள்</a>
-      <a href="#booking">முன்பதிவு</a>
-      <a href="tel:9791406655">📞 Call</a>
-    </nav>
+  <!-- Main Navigation Header -->
+  <nav class="navbar" id="navbar" aria-label="முதன்மை வழிசெலுத்தல்">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="நற்புவி முகப்பு">
+        <div class="logo-icon-wrap">
+          <!-- Narpuvi Authentic Circular Foot & Leaf Logo SVG -->
+          <svg class="brand-svg-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="48" fill="#FFFFFF" stroke="#1A4D2E" stroke-width="3"/>
+            <circle cx="50" cy="50" r="44" stroke="#4E9F3D" stroke-width="2" stroke-dasharray="3 3"/>
+            <path d="M42 66 C35 66 32 60 32 52 C32 44 37 38 37 30 C37 24 40 20 44 20 C48 20 50 24 50 30 C50 38 48 44 48 52 C48 60 46 66 42 66 Z" fill="#1A4D2E"/>
+            <circle cx="43" cy="16" r="3" fill="#1A4D2E"/>
+            <path d="M58 66 C54 66 52 60 52 52 C52 44 50 38 50 30 C50 24 52 20 56 20 C60 20 63 24 63 30 C63 38 68 44 68 52 C68 60 65 66 58 66 Z" fill="#0D9488"/>
+            <circle cx="57" cy="16" r="3" fill="#0D9488"/>
+            <path d="M26 62 C34 76 66 76 74 62 C68 70 38 72 26 62 Z" fill="#4E9F3D"/>
+            <text x="50" y="86" font-size="11" font-weight="bold" text-anchor="middle" fill="#1A4D2E">நற்புவி</text>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-main-title">நற்புவி பாத அழுத்த மையம்</span>
+          <span class="brand-specialist-title">Er. E. நல்லசிவம் M.E. • சூரியம்பாளையம்</span>
+        </div>
+      </a>
 
-    <a class="whatsapp" href="https://wa.me/919791406655">WhatsApp</a>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1>பாத அழுத்த புத்துணர்வு<br>சிகிச்சை மையம்</h1>
-      <p>
-        Er. E. நல்லசிவம் M.E.Reflexologist<br />
-        Foot Reflexology Rejuvenation Therapy Center
-      </p>
-      <a class="cta" href="#treatments"> சிகிச்சைகளை பார்க்க</a>
-    </div>
-  </section>
-
-  <!-- BENEFITS -->
-  <section id="benefits">
-    <div class="card">
-      <h3>பாத அழுத்த சிகிச்சையின் நன்மைகள்</h3>
-      <ul class="list">
-        <li>✅ உடலில் உள்ள நரம்பு மண்டலத்தை சீராக்க உதவும்</li>
-        <li>✅ ரத்த ஓட்டத்தை மேம்படுத்த உதவும்</li>
-        <li>✅ மன அழுத்தம் மற்றும் சோர்வை குறைக்க உதவும்</li>
-        <li>✅ உறக்கம் மற்றும் தளர்வை மேம்படுத்த உதவும்</li>
-        <li>✅ உடல் புத்துணர்வு மற்றும் நல பராமரிப்பிற்கு உதவும்</li>
+      <!-- Desktop & Mobile Drawer Nav Items -->
+      <ul class="nav-menu" id="navMenu">
+        <li class="mobile-menu-header">
+          <span class="mobile-menu-title">🌿 நற்புவி சிகிச்சை மையம்</span>
+          <button type="button" class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="மெனு மூடுக">✕</button>
+        </li>
+        <li><a href="#home" class="nav-link active" data-i18n="nav_home">முகப்பு</a></li>
+        <li><a href="#benefits" class="nav-link" data-i18n="nav_benefits">நன்மைகள்</a></li>
+        <li><a href="#oil-product" class="nav-link nav-highlight-link" data-i18n="nav_oil">மூட்டுவலி எண்ணெய் (₹100)</a></li>
+        <li><a href="#timings-pricing" class="nav-link" data-i18n="nav_pricing">நேரம் & கட்டணம்</a></li>
+        <li><a href="#guidelines" class="nav-link" data-i18n="nav_guidelines">முன்பதிவு குறிப்பு</a></li>
+        <li class="mobile-only-link"><a href="#philosophy" class="nav-link" data-i18n="nav_philosophy">தத்துவம்</a></li>
+        <li class="mobile-only-link"><a href="#gallery" class="nav-link" data-i18n="nav_gallery">சுவரொட்டிகள்</a></li>
+        <li class="mobile-only-link"><a href="#foot-chart" class="nav-link" data-i18n="nav_chart">பாத வரைபடம்</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">இருப்பிடம்</a></li>
+        <li class="mobile-menu-cta">
+          <button type="button" class="btn btn-whatsapp btn-block" onclick="openBookingModal(); closeMobileMenu();">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/></svg>
+            <span>WhatsApp முன்பதிவு</span>
+          </button>
+        </li>
       </ul>
+
+      <div class="nav-cta-wrap">
+        <button type="button" class="btn btn-whatsapp nav-book-btn" onclick="openBookingModal()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/></svg>
+          <span data-i18n="btn_whatsapp_book">WhatsApp முன்பதிவு</span>
+        </button>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" type="button" onclick="toggleMobileMenu()" aria-label="மெனு திறக்க / மூடுக">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
     </div>
-  </section>
+  </nav>
 
-  <!-- TREATMENTS / GALLERY (Clickable) -->
-  <section id="treatments">
-    <div class="card">
-      <h3>சிகிச்சைகள்</h3>
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="nav-backdrop" id="navBackdrop" onclick="closeMobileMenu()"></div>
 
-      <div class="galleryGrid">
-        <div class="ph">
-          <button class="phBtn" type="button"
-            data-title="குழந்தை பாக்கியம் பெற!"
-            data-sub="குழந்தை பாக்கியம் பெற"
-            data-img="assets/images/service1.jpg"
-            data-points="உடல் புத்துணர்வு|மன தளர்வு|ரத்த ஓட்டம் மேம்பாடு|நலம் பராமரிப்பு">
-            <img src="assets/images/service1.jpg" alt="குழந்தை பாக்கியம் பெற சிகிச்சை" loading="lazy" />
-            <div class="cap">குழந்தை பாக்கியம் பெற!<small>சீரான வளர்ச்சி & நலம்</small></div>
-          </button>
+  <!-- Golden Philosophy Banner -->
+  <aside class="golden-proverb-banner" aria-label="தத்துவப் பொன்மொழி">
+    <div class="container text-center">
+      <p class="proverb-quote">
+        “அகத்தின் அழகு முகத்தில் தெரியும்” அதுபோல <strong>அக உடலின் ஆரோக்கியம் கால் பாதங்களில் தெரியும்</strong>”
+      </p>
+      <span class="proverb-motto">“நாமும் வாழ்ந்து நம் சமூகத்தையும் வாழ வைப்போம்.”</span>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-pattern-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <!-- Location & Specialist Pill -->
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>📍 சூரியம்பாளையம் • Er. E. நல்லசிவம் M.E., Reflexologist</span>
+        </div>
+        
+        <h1 class="hero-title">
+          <span class="hero-brand-name">நற்புவி</span>
+          <span class="hero-highlight">பாத அழுத்த புத்துணர்வு</span>
+          <span class="hero-main-title">சிகிச்சை மையம்</span>
+        </h1>
+
+        <p class="hero-tagline-quote">
+          “ஆரோக்கியமான வாழ்க்கைக்கு இயற்கை முறை சிகிச்சை”
+        </p>
+
+        <!-- Specialist Credit & Address -->
+        <div class="hero-specialist-banner">
+          <span class="badge-gold">சிகிச்சை நிபுணர்:</span>
+          <strong>Er. E. நல்லசிவம் M.E., Reflexologist</strong>
         </div>
 
-        <div class="ph">
-          <button class="phBtn" type="button"
-            data-title="கருப்பை பிரச்சனைகள் நீங்க!"
-            data-sub="கருப்பை ஆதரவு"
-            data-img="assets/images/service2.jpg"
-            data-points="உடல் சமநிலை|மன தளர்வு|சோர்வு குறைப்பு|நலம் பராமரிப்பு">
-            <img src="assets/images/service2.jpg" alt="கருப்பை ஆதரவு சிகிச்சை" loading="lazy" />
-            <div class="cap">கருப்பை பிரச்சனைகள் நீங்க!<small>கருப்பை ஆதரவு</small></div>
-          </button>
+        <div class="hero-address-strip">
+          <a href="https://www.google.com/maps/place/%E0%AE%A8%E0%AE%B1%E0%AF%8D%E0%AE%AA%E0%AF%81%E0%AE%B5%E0%AE%BF+%E0%AE%AA%E0%AE%BE%E0%AE%A4+%E0%AE%85%E0%AE%B4%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4+%E0%AE%AA%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%A3%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%81+%E0%AE%9A%E0%AE%BF%E0%AE%95%E0%AE%BF%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AF%88+%E0%AE%AE%E0%AF%88%E0%AE%AF%E0%AE%AE%E0%AF%8D(+Narpuvi+Foot+Reflexology+Rejuvenation+Therpy+Center),+gobi/@11.4458001,77.5202291,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba93f5aff4ac153:0x7aeff8450a845d1c!8m2!3d11.4458001!4d77.5202291!16s%2Fg%2F11ynps0zc2!18m1!1e1" target="_blank" rel="noopener noreferrer" class="hero-address-link" title="கூகுள் மேப்பில் நற்புவி மையத்தை காண்க">
+            <span>🏡 குயிலங்காடு தோட்டம், சூரியம்பாளையம் | கவுந்தப்பாடி to கோபி மெயின் ரோடு (Google Maps 📍)</span>
+          </a>
+        </div>
+        
+        <!-- Fast Facts Strip: Fee & Timing -->
+        <div class="hero-quick-facts">
+          <div class="q-fact-pill price-pill">
+            <span class="q-label">சிகிச்சை கட்டணம்</span>
+            <span class="q-val">ரூ 200</span>
+          </div>
+          <div class="q-fact-pill timing-pill">
+            <span class="q-label">இயங்கும் நேரம்</span>
+            <span class="q-val">காலை 7.00 - 12.00</span>
+          </div>
+          <div class="q-fact-pill duration-pill">
+            <span class="q-label">அமர்வு காலம்</span>
+            <span class="q-val">30 / 45 / 60 நிமிடம்</span>
+          </div>
         </div>
 
-        <div class="ph">
-          <button class="phBtn" type="button"
-            data-title="நன்றாக தூக்கம் வர!"
-            data-sub="தளர்வு & நித்திரை"
-            data-img="assets/images/service3.jpg"
-            data-points="உறக்கம் மேம்பாடு|மன அழுத்த குறைப்பு|உடல் தளர்வு|சோர்வு குறைப்பு">
-            <img src="assets/images/service3.jpg" alt="நன்றாக தூக்கம் வர சிகிச்சை" loading="lazy" />
-            <div class="cap">நன்றாக தூக்கம் வர!<small>தளர்வு & நித்திரை</small></div>
-          </button>
+        <!-- 5 Exact Benefits Checklist with Crisp SVG Badges -->
+        <div class="hero-core-checklist">
+          <h3 class="checklist-title">பாத அழுத்த சிகிச்சையின் முக்கிய நன்மைகள்:</h3>
+          <ul class="checklist-items">
+            <li>
+              <span class="badge-icon circulation-badge" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l1.5-3 2 6 1.5-3h4.28"/></svg>
+              </span>
+              <span>இரத்த ஓட்டத்தை மேம்படுத்துகிறது</span>
+            </li>
+            <li>
+              <span class="badge-icon stress-badge" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12a15.3 15.3 0 0 1 10-4 15.3 15.3 0 0 1 10 4 15.3 15.3 0 0 1-10 4 15.3 15.3 0 0 1-10-4z"/></svg>
+              </span>
+              <span>மன அழுத்தத்தைக் குறைக்கிறது</span>
+            </li>
+            <li>
+              <span class="badge-icon sleep-badge" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+              </span>
+              <span>தூக்கமின்மையைக் குணப்படுத்துகிறது</span>
+            </li>
+            <li>
+              <span class="badge-icon nerve-badge" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+              <span>நரம்பு மண்டலத்தை வலுப்படுத்துகிறது</span>
+            </li>
+            <li>
+              <span class="badge-icon pain-badge" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </span>
+              <span>வலிகளில் இருந்து நிவாரணம்</span>
+            </li>
+          </ul>
         </div>
 
-        <div class="ph">
-          <button class="phBtn" type="button"
-            data-title="மன அழுத்த குறைப்பு"
-            data-sub="சோர்வு குறைப்பு"
-            data-img="assets/images/service4.jpg"
-            data-points="மன அமைதி|உடல் தளர்வு|உறக்கம் உதவி|நரம்பு மண்டலம் சீராக்குதல்">
-            <img src="assets/images/service4.jpg" alt="மன அழுத்த குறைப்பு சிகிச்சை" loading="lazy" />
-            <div class="cap">மன அழுத்த குறைப்பு<small>சோர்வு குறைப்பு</small></div>
+        <!-- Hero Actions -->
+        <div class="hero-action-buttons">
+          <button type="button" class="btn btn-whatsapp btn-large glow-effect" onclick="openBookingModal()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/></svg>
+            <span>WhatsApp முன்பதிவு செய்க</span>
           </button>
-        </div>
+          
+          <a href="tel:+919791406655" class="btn btn-outline btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>அழைக்க: 97914 06655</span>
+          </a>
 
-        <div class="ph">
-          <button class="phBtn" type="button"
-            data-title="முழு உடல் புத்துணர்வு"
-            data-sub="நலம் பராமரிப்பு"
-            data-img="assets/images/service5.jpg"
-            data-points="உடல் புத்துணர்வு|ரத்த ஓட்டம் மேம்பாடு|தளர்வு|நலம் பராமரிப்பு">
-            <img src="assets/images/service5.jpg" alt="முழு உடல் புத்துணர்வு சிகிச்சை" loading="lazy" />
-            <div class="cap">முழு உடல் புத்துணர்வு<small>நலம் பராமரிப்பு</small></div>
-          </button>
+          <a href="#oil-product" class="btn btn-gold btn-large">
+            <span>🌿 மூட்டுவலி எண்ணெய் (₹100)</span>
+          </a>
         </div>
+      </div>
 
-        <div class="ph">
-          <button class="phBtn" type="button"
-            data-title="முதுகு & கழுத்து வலி"
-            data-sub="இறுக்கம் குறைப்பு"
-            data-img="assets/images/service6.jpg"
-            data-points="இறுக்கம் குறைப்பு|தளர்வு மேம்பாடு|நடமாட்ட நலம்|மன அழுத்த குறைப்பு">
-            <img src="assets/images/service6.jpg" alt="முதுகு மற்றும் கழுத்து வலி சிகிச்சை" loading="lazy" />
-            <div class="cap">முதுகு & கழுத்து வலி<small>இறுக்கம் குறைப்பு</small></div>
-          </button>
-        </div>
+      <!-- Hero Visual Side: Real Poster Imagery & Highlights -->
+      <div class="hero-visual">
+        <div class="visual-card-wrap">
+          <div class="visual-card-glow"></div>
+          <div class="visual-main-card">
+            
+            <!-- Real Visual Graphic from Reference Flyer -->
+            <div class="visual-poster-thumbnail-box">
+              <img src="assets/narpuvi-reflexology-illustration.jpg" alt="நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் - சூரியம்பாளையம்" class="hero-poster-img" loading="lazy">
+              <span class="poster-overlay-badge">🌿 நற்புவி நல்வாழ்வு மையம்</span>
+            </div>
 
-        <div class="ph">
-          <button class="phBtn" type="button"
-            data-title="மூட்டு வலி தணிவு"
-            data-sub="நடமாட்ட தளர்வு"
-            data-img="assets/images/service7.jpg"
-            data-points="மூட்டு தளர்வு|சோர்வு குறைப்பு|உடல் சமநிலை|ரத்த ஓட்டம் உதவி">
-            <img src="assets/images/service7.jpg" alt="மூட்டு வலி தணிவு சிகிச்சை" loading="lazy" />
-            <div class="cap">மூட்டு வலி தணிவு<small>நடமாட்ட தளர்வு</small></div>
-          </button>
-        </div>
+            <!-- Quick Summary Board -->
+            <div class="hero-therapy-summary-card">
+              <div class="summary-top">
+                <span class="summary-treatment-name">சிகிச்சை:</span>
+                <h4>பாத அழுத்த புத்துணர்வு சிகிச்சை</h4>
+                <p class="specialist-name-tag">சிகிச்சை நிபுணர்: <strong>Er. E. நல்லசிவம் M.E., Reflexologist</strong></p>
+              </div>
 
-        <div class="ph">
-          <button class="phBtn" type="button"
-            data-title="தலைவலி / மைக்ரேன்"
-            data-sub="மன அமைதி"
-            data-img="assets/images/service8.jpg"
-            data-points="மன தளர்வு|உறக்கம் உதவி|சோர்வு குறைப்பு|நரம்பு மண்டலம் சீராக்குதல்">
-            <img src="assets/images/service8.jpg" alt="தலைவலி அல்லது மைக்ரேன் சிகிச்சை" loading="lazy" />
-            <div class="cap">தலைவலி / மைக்ரேன்<small>மன அமைதி</small></div>
-          </button>
+              <div class="summary-details-grid">
+                <div class="s-detail-box highlight-box">
+                  <span class="s-label">சிகிச்சை கட்டணம்</span>
+                  <span class="s-value">ரூ 200</span>
+                  <span class="s-sub">மறைமுகக் கட்டணமில்லை</span>
+                </div>
+                <div class="s-detail-box">
+                  <span class="s-label">நேரம் (Duration)</span>
+                  <span class="s-value small">30 / 45 / 60</span>
+                  <span class="s-sub">நிமிடங்கள்</span>
+                </div>
+              </div>
+
+              <div class="timing-badge-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <div>
+                  <strong>சிகிச்சை நேரங்கள்:</strong>
+                  <span>காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை</span>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-whatsapp btn-block" onclick="openBookingModal()">
+                <span>உடனே WhatsApp-ல் பதிவு செய்ய</span>
+              </button>
+            </div>
+
+            <!-- Caution Note Box right below card -->
+            <div class="caution-notice-card">
+              <div class="c-notice-header">
+                <span class="c-notice-icon">⚠️</span>
+                <strong>முக்கிய முன்பதிவு குறிப்பு:</strong>
+              </div>
+              <p>
+                இந்த பாத அழுத்த சிகிச்சைகளை மேற்கொள்ளுவதற்கு <strong>ஒரு மணி நேரத்திற்கு முன்பும், பின்பும் உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது</strong>. அப்போது தான் சிகிச்சையின் முழு பலனையும் பெற முடியும்.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS (AUTO ROTATE) -->
-  <section id="testimonials">
-    <div class="card">
-      <h3>🗣️ வாடிக்கையாளர் கருத்துகள்</h3>
+  <!-- Educational Philosophy Section from Poster -->
+  <section class="section philosophy-section" id="philosophy">
+    <div class="container">
+      <div class="philosophy-box-wrap">
+        <div class="section-header">
+          <span class="section-tag">📖 சிகிச்சையின் உண்மை அறிவியல்</span>
+          <h2 class="section-title">பாத அழுத்த சிகிச்சை எவ்வாறு உடலை குணப்படுத்துகிறது?</h2>
+          <div class="title-divider"></div>
+          <p class="section-subtitle">
+            நற்புவி சுவரொட்டியில் பகிரப்பட்ட உண்மை மருத்துவ அறிவியல் விளக்கம்
+          </p>
+        </div>
 
-      <div class="tWrap">
-        <div class="tCarousel" id="tCarousel">
-          <div class="tTrack" id="tTrack">
-            <div class="tItem">
-              <div class="tCard">
-                <div class="tQuote">“சிகிச்சைக்கு பிறகு உடல் நன்றாக தளர்வாக இருந்தது. மன அழுத்தமும் குறைந்தது.”</div>
-                <div class="tMeta"><span>ராஜேஷ்</span><span class="tStars">★★★★★</span></div>
+        <div class="philosophy-content-grid">
+          <div class="philosophy-text-col">
+            <div class="quote-card-primary">
+              <p class="flyer-verbatim-text">
+                "நமது கால் பாதங்களில் அனைத்து உடல் உறுப்புகளுக்கும் தொடர்புடைய பகுதிகள் உள்ளன. நமது உடலின் உயிராற்றலும், இரத்த ஓட்டமும் மேலிருந்து கீழாகவும், உணவு வாழ்க்கை முறை மாற்றங்களால் இரத்தத்தின் தன்மையும், இரத்தத்தின் அளவும் மாறுபடுகிறது. இதன் மூலம் பல்வேறு நோய்கள் நமக்கு ஏற்படுகின்றது."
+              </p>
+              <p class="flyer-verbatim-text">
+                "பாத அழுத்த சிகிச்சை முறையில் பாதங்களில் உள்ள உடல் உறுப்புகளுக்கு தொடர்புடைய பகுதியில் பரிசோதனை செய்த பிறகு, முறையாக அழுத்தம் கொடுக்கும் போது இரத்தத்தின் பரிபூரணமான வெளிப்பாடு, உடல் உறுப்புகள் புத்துணர்வு, பாத அழுத்த புத்துணர்வு சிகிச்சையுடன் உணவு மற்றும் வாழ்வியல் முறையில் சில மாற்றத்தை பாத அழுத்த சிகிச்சை நிபுணரின் பரிந்துரை படி முறையாக கடைபிடித்தால் நோயின்றி நீண்ட நாட்கள் ஆரோக்கியமாக வாழ முடியும்."
+              </p>
+              <div class="motto-tag-box">
+                <span>“நாமும் வாழ்ந்து நம் சமூகத்தையும் வாழ வைப்போம்.”</span>
               </div>
             </div>
+          </div>
 
-            <div class="tItem">
-              <div class="tCard">
-                <div class="tQuote">“தூக்கம் சரியாக வந்தது. காலை எழுந்ததும் புத்துணர்வு இருந்தது.”</div>
-                <div class="tMeta"><span>கல்யாணி</span><span class="tStars">★★★★★</span></div>
-              </div>
-            </div>
-
-            <div class="tItem">
-              <div class="tCard">
-                <div class="tQuote">“முதுகு வலி குறைந்தது. தொடர்ந்து வந்தால் மேலும் நல்லது போல உள்ளது.”</div>
-                <div class="tMeta"><span>முருகன்</span><span class="tStars">★★★★★</span></div>
-              </div>
-            </div>
-
-            <div class="tItem">
-              <div class="tCard">
-                <div class="tQuote">“சேவை நன்றாக இருந்தது. நேரமும் ஒழுங்காக வைத்திருந்தார்கள்.”</div>
-                <div class="tMeta"><span>பிரியா</span><span class="tStars">★★★★★</span></div>
+          <div class="philosophy-visual-col">
+            <div class="ambience-photo-card">
+              <img src="assets/narpuvi-center-flyer.jpg" alt="சிகிச்சை அளிக்குமிடம் மற்றும் பாத அழுத்த சிகிச்சை முறை" class="flyer-real-photo" loading="lazy">
+              <div class="photo-caption">
+                <strong>சிகிச்சை அளிக்குமிடம்:</strong>
+                <p>அமைதியான சூழலில் Er. E. நல்லசிவம் M.E., Reflexologist அவர்களின் நேரடி சிகிச்சை</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="tDots" id="tDots"></div>
+  <!-- Product Feature Section: நற்புவி மூட்டுவலி நிவாரண எண்ணெய் (₹100) -->
+  <section class="section oil-product-section" id="oil-product">
+    <div class="container">
+      <div class="oil-card-container">
+        <div class="oil-card-badge">|| இயற்கை அமுதம் ||</div>
 
-        <div class="tBtns">
-          <button class="tBtn" type="button" id="tPrev">◀︎</button>
-          <button class="tBtn" type="button" id="tNext">▶︎</button>
+        <div class="oil-grid">
+          <!-- Left: Real Product Image from Flyer -->
+          <div class="oil-image-col">
+            <div class="oil-img-wrapper">
+              <img src="assets/narpuvi-joint-pain-oil.jpg" alt="நற்புவி மூட்டுவலி நிவாரண எண்ணெய் - Joint Pain Relief Oil" class="oil-main-img" loading="lazy">
+              <span class="oil-price-tag">விலை: ₹100</span>
+            </div>
+          </div>
+
+          <!-- Right: Product Details & One-Click Order -->
+          <div class="oil-info-col">
+            <span class="oil-subtitle">பாரம்பரிய மூலிகைகளின் சக்தி</span>
+            <h2 class="oil-title">நற்புவி மூட்டுவலி நிவாரண எண்ணெய்</h2>
+            <h3 class="oil-title-en">Narpuvi Joint Pain Relief Oil</h3>
+            <div class="title-divider left-align"></div>
+
+            <p class="oil-desc">
+              மஞ்சள், இஞ்சி, வேப்பிலை, யூகலிப்டஸ் மற்றும் அரிய பாரம்பரிய சித்த மூலிகைகளைக் கொண்டு பிரத்யேகமாக காய்ச்சி வடிக்கப்பட்ட உயர்தர இயற்கை தைலம். மூட்டு மற்றும் தசை வலிகளுக்கு உடனடி நிவாரணம் தருகிறது.
+            </p>
+
+            <div class="oil-features-list">
+              <div class="oil-feat-item">
+                <span class="of-icon">⭐</span>
+                <div>
+                  <strong>மூட்டு வலி, முழங்கால் வலி குணமாக்கும்</strong>
+                  <span>மூட்டு இணைப்புகளில் உள்ள தேய்மான வலியை குறைக்கும்</span>
+                </div>
+              </div>
+
+              <div class="oil-feat-item">
+                <span class="of-icon">⭐</span>
+                <div>
+                  <strong>தசைப்பிடிப்பு, முதுகு வலி நீக்கும்</strong>
+                  <span>கழுத்து, தோள்பட்டை, இடுப்பு பிடிப்புகளை தளர்த்தும்</span>
+                </div>
+              </div>
+
+              <div class="oil-feat-item">
+                <span class="of-icon">⭐</span>
+                <div>
+                  <strong>ரத்த ஓட்டத்தை அதிகரிக்கும்</strong>
+                  <span>நரம்புகளில் புதிய ரத்த ஓட்டம் பாயச் செய்யும்</span>
+                </div>
+              </div>
+
+              <div class="oil-feat-item">
+                <span class="of-icon">⭐</span>
+                <div>
+                  <strong>100% இயற்கை & பக்கவிளைவற்றது</strong>
+                  <span>எந்தவித ரசாயனக் கலவையுமற்ற தூய்மையான முறை</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price Strip & WhatsApp Order CTA -->
+            <div class="oil-purchase-strip">
+              <div class="oil-price-box">
+                <span class="op-label">சிறப்பு விலை:</span>
+                <span class="op-currency">₹</span>
+                <span class="op-cost">100</span>
+                <span class="op-sub">/ ஒரு பாட்டில்</span>
+              </div>
+
+              <div class="oil-order-btn-box">
+                <a href="https://wa.me/919791406655?text=வணக்கம்%20Er.%20E.%20நல்லசிவம்%20அவர்களே,%20நற்புவி%20மூட்டுவலி%20நிவாரண%20எண்ணெய்%20(விலை:%20₹100)%20வாங்க%20விரும்புகிறேன்." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/></svg>
+                  <span>WhatsApp-ல் எண்ணெய் ஆர்டர் செய்ய</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="oil-location-note">
+              <a href="https://www.google.com/maps/place/%E0%AE%A8%E0%AE%B1%E0%AF%8D%E0%AE%AA%E0%AF%81%E0%AE%B5%E0%AE%BF+%E0%AE%AA%E0%AE%BE%E0%AE%A4+%E0%AE%85%E0%AE%B4%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4+%E0%AE%AA%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%A3%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%81+%E0%AE%9A%E0%AE%BF%E0%AE%95%E0%AE%BF%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AF%88+%E0%AE%AE%E0%AF%88%E0%AE%AF%E0%AE%AE%E0%AF%8D(+Narpuvi+Foot+Reflexology+Rejuvenation+Therpy+Center),+gobi/@11.4458001,77.5202291,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba93f5aff4ac153:0x7aeff8450a845d1c!8m2!3d11.4458001!4d77.5202291!16s%2Fg%2F11ynps0zc2!18m1!1e1" target="_blank" rel="noopener noreferrer" title="கூகுள் மேப்பில் இருப்பிடம் பார்க்க">
+                <span>📍 நேரில் பெற: குயிலங்காடு தோட்டம், சூரியம்பாளையம் (கவுந்தப்பாடி to கோபி ரோடு) | 📞 9791406655 (Google Maps ↗)</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GOOGLE REVIEWS -->
-  <section id="reviews">
-    <div class="card">
-      <h3>⭐ Google Reviews</h3>
-
-      <div class="mapWrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.4641097844956!2d77.51776707574146!3d11.446389246477594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93f5aff4ac153%3A0x7aeff8450a845d1c!2z4K6o4K6x4K-N4K6q4K-B4K614K6_IOCuquCuvuCupCDgroXgrrTgr4HgrqTgr43grqQg4K6q4K-B4K6k4K-N4K6k4K-B4K6j4K6w4K-N4K614K-BIOCumuCuv-CuleCuv-CumuCvjeCumuCviCDgrq7gr4jgrq_grq7gr40oIE5hcnB1dmkgRm9vdCBSZWZsZXhvbG9neSBSZWp1dmVuYXRpb24gVGhlcnB5IENlbnRlciksIGdvYmk!5e0!3m2!1sen!2sin!4v1770558562969!5m2!1sen!2sin"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-
-      <div class="centerBtn">
-        <a class="whatsapp"
-           href="https://www.google.com/maps/place/?q=place_id:ChIJU8FK_1o_qTsRHfWECkX47no"
-           target="_blank" rel="noopener">
-          ✍️ Add a Review
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING -->
-  <section id="booking">
-    <div class="card">
-      <h3>சிகிச்சை நேரம் & கட்டணம்</h3>
-
-      <div class="info">
-        <p><b>சிகிச்சை:</b> பாத அழுத்த புத்துணர்வு சிகிச்சை</p>
-        <p><b>நேரம்:</b> 30 / 45 / 60 நிமிடங்கள்</p>
-        <p><b>முன்பதிவு:</b> WhatsApp மூலம்</p>
-        <p><b>கட்டணம்:</b> ரூ 200</p>
-        <p><b>நேரங்கள்:</b> காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை</p>
-      </div>
-
-      <div class="note">
-        <b>முன்பதிவு குறிப்பு :</b>
-        <p style="margin-top:8px;">
-          இந்த பாத அழுத்த சிகிச்சைகளை மேற்கொள்ளுவதற்கு மணி நேரத்திற்கு முன்பும்,
-          பின்பும் உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது.
-          அப்போது தான் சிகிச்சையின் முழு பலனையும் பெற முடியும்.
+  <!-- 5 Core Health Benefits Section -->
+  <section class="section benefits-section" id="benefits">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">✨ நன்மைகள்</span>
+        <h2 class="section-title">பாத அழுத்த சிகிச்சையின் முக்கிய பலன்கள்</h2>
+        <div class="title-divider"></div>
+        <p class="section-subtitle">
+          நற்புவி சிகிச்சை மூலம் உங்கள் உடல் உறுப்புகள் பெறும் உடனடி புத்துணர்ச்சி
         </p>
       </div>
 
-      <a class="whatsapp" style="margin-top:18px;" href="https://wa.me/919791406655">
-        WhatsApp மூலம் முன்பதிவு
-      </a>
+      <div class="core-benefits-grid">
+        <!-- Benefit 1 -->
+        <div class="core-benefit-card">
+          <div class="b-badge-num">01</div>
+          <div class="b-card-icon circulation-badge" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l1.5-3 2 6 1.5-3h4.28"/></svg>
+          </div>
+          <h3>இரத்த ஓட்டத்தை மேம்படுத்துகிறது</h3>
+          <p>
+            உடலின் நுண் ரத்த நாளங்களைத் தூண்டி, மேலிருந்து கீழாக ரத்த ஓட்டத்தை சீரமைத்து இதயத்திற்கும் அனைத்து உள் உறுப்புகளுக்கும் முழுமையான ஆக்ஸிஜன் பாயச் செய்கிறது.
+          </p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="core-benefit-card highlight-card">
+          <div class="b-badge-num">02</div>
+          <div class="b-card-icon stress-badge" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12a15.3 15.3 0 0 1 10-4 15.3 15.3 0 0 1 10 4 15.3 15.3 0 0 1-10 4 15.3 15.3 0 0 1-10-4z"/></svg>
+          </div>
+          <h3>மன அழுத்தத்தைக் குறைக்கிறது</h3>
+          <p>
+            தினசரி வேலைப்பளு, கவலை மற்றும் பதற்றத்தை விரட்டியடித்து நரம்புகளைத் தளர்த்தி உடலையும் மனதையும் அமைதிப் பெருவெளியில் ஆழ்த்துகிறது.
+          </p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="core-benefit-card highlight-card">
+          <div class="b-badge-num">03</div>
+          <div class="b-card-icon sleep-badge" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+          </div>
+          <h3>தூக்கமின்மையைக் குணப்படுத்துகிறது</h3>
+          <p>
+            பாதங்களில் உள்ள பீனியல் ரிஃப்ளெக்ஸ் புள்ளிகளைத் தூண்டுவதால் தூக்க சுழற்சி சீரடைந்து பல மாதங்களாக தூக்கமின்றி அவதிப்படுபவர்களுக்கும் ஆழ்ந்த நிம்மதியான உறக்கம் உண்டாகிறது.
+          </p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="core-benefit-card">
+          <div class="b-badge-num">04</div>
+          <div class="b-card-icon nerve-badge" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>நரம்பு மண்டலத்தை வலுப்படுத்துகிறது</h3>
+          <p>
+            பாதங்களில் உள்ள 7,200-க்கும் மேற்பட்ட நரம்பு முனைகளில் முறையான அழுத்தம் கொடுக்கப்படும்போது, தளர்ந்த நரம்புகள் விழிப்படைந்து நரம்பு மண்டலம் வலுப்பெறுகிறது.
+          </p>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="core-benefit-card full-width-card">
+          <div class="b-badge-num">05</div>
+          <div class="b-card-icon pain-badge" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3>வலிகளில் இருந்து நிவாரணம்</h3>
+          <p>
+            குதிகால் வலி (Plantar Fasciitis), முழங்கால் மூட்டு வலி, தசைப்பிடிப்பு, இடுப்பு மற்றும் முதுகு வாத வலிகளில் இருந்து மருந்துகளின்றி உடனடி நிவாரணம் பெறலாம்.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p><b>Er. E. நல்லசிவம் M.E.Reflexologist</b></p>
-    <p>குயிலங்காடு தோட்டம், சூரியம்பாளையம்</p>
-    <p>கவுந்தப்பாடி to கோபி மெயின் ரோடு</p>
-    <p>📞 97914 06655</p>
-  </footer>
+  <!-- Treatment Timings, Fees and Details Section -->
+  <section class="section pricing-section" id="timings-pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🏷️ கட்டணம் & நேரம் விவரம்</span>
+        <h2 class="section-title">சிகிச்சை நேரம் & கட்டணம்</h2>
+        <div class="title-divider"></div>
+        <p class="section-subtitle">
+          சாமானிய மக்களும் பயன்பெறும் நியாயமான வெளிப்படையான கட்டணங்கள்
+        </p>
+      </div>
 
-  <!-- DETAILS MODAL -->
-  <div class="modalBack" id="tModal" aria-hidden="true">
-    <div class="modalBox" role="dialog" aria-modal="true" aria-labelledby="mTitle">
-      <div class="modalGrid">
-        <img class="modalImg" id="mImg" alt="Treatment image" />
-        <div class="modalBody">
-          <h4 class="modalTitle" id="mTitle"></h4>
-          <div class="modalSub" id="mSub"></div>
+      <div class="pricing-cards-layout">
+        <!-- Main Highlight Card -->
+        <div class="main-pricing-card">
+          <div class="p-card-header">
+            <span class="p-tag">நற்புவி அங்கீகரிக்கப்பட்ட சிகிச்சை</span>
+            <h3 class="p-title">பாத அழுத்த புத்துணர்வு சிகிச்சை</h3>
+            <p class="p-lead">Foot Reflexology Rejuvenation Therapy</p>
+            <div class="p-price-display">
+              <span class="currency">ரூ</span>
+              <span class="cost">200</span>
+              <span class="per">/ ஒரு அமர்வு கட்டணம்</span>
+            </div>
+          </div>
 
-          <ul class="modalList" id="mList"></ul>
+          <div class="p-card-details">
+            <div class="p-detail-row">
+              <div class="p-detail-icon">⏱️</div>
+              <div class="p-detail-text">
+                <strong>சிகிச்சை நேரம்:</strong>
+                <span>30 / 45 / 60 நிமிடங்கள் (உடல் நிலைக்கேற்ப)</span>
+              </div>
+            </div>
 
-          <div class="modalActions">
-            <a class="modalPrimary" id="mBook" href="https://wa.me/919791406655" target="_blank" rel="noopener">
-              WhatsApp Booking
-            </a>
-            <button class="modalClose" type="button" id="mClose">Close</button>
+            <div class="p-detail-row">
+              <div class="p-detail-icon">🕒</div>
+              <div class="p-detail-text">
+                <strong>இயங்கும் நேரங்கள்:</strong>
+                <span>காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை</span>
+              </div>
+            </div>
+
+            <div class="p-detail-row">
+              <div class="p-detail-icon">📱</div>
+              <div class="p-detail-text">
+                <strong>முன்பதிவு முறை:</strong>
+                <span>WhatsApp மூலம் சுலபமாக பதிவு செய்து கொள்ளலாம்</span>
+              </div>
+            </div>
+
+            <div class="p-detail-row">
+              <div class="p-detail-icon">👨‍⚕️</div>
+              <div class="p-detail-text">
+                <strong>சிகிச்சை நிபுணர்:</strong>
+                <span>Er. E. நல்லசிவம் M.E., Reflexologist</span>
+              </div>
+            </div>
+
+            <div class="p-detail-row">
+              <div class="p-detail-icon">🏡</div>
+              <div class="p-detail-text">
+                <strong>அமைவிடம்:</strong>
+                <span>குயிலங்காடு தோட்டம், சூரியம்பாளையம் (கவுந்தப்பாடி to கோபி ரோடு)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-card-action">
+            <button type="button" class="btn btn-whatsapp btn-large btn-block" onclick="openBookingModal()">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/></svg>
+              <span>இப்போதே WhatsApp-ல் முன்பதிவு செய்ய</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Important Patient Preparation Guidelines Section -->
+  <section class="section guidelines-section" id="guidelines">
+    <div class="container">
+      <div class="guideline-card-wrap">
+        <div class="guideline-icon-badge">⚠️</div>
+        <div class="guideline-content">
+          <span class="g-sub">சிகிச்சையின் முழுப் பலனைப் பெற</span>
+          <h2 class="g-title">முக்கிய முன்பதிவு குறிப்பு</h2>
+          <div class="title-divider left-align"></div>
+          
+          <div class="g-highlight-quote">
+            "இந்த பாத அழுத்த சிகிச்சைகளை மேற்கொள்ளுவதற்கு <strong>ஒரு மணி நேரத்திற்கு முன்பும், பின்பும் உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது</strong>. அப்போது தான் சிகிச்சையின் முழு பலனையும் பெற முடியும்."
+          </div>
+
+          <div class="g-reasons-grid">
+            <div class="g-reason">
+              <span class="gr-num">1</span>
+              <div>
+                <strong>செரிமான சுமையைத் தவிர்த்தல்:</strong>
+                <p>உணவு உண்டவுடன் ரத்த ஓட்டம் செரிமான மண்டலத்திற்கு குவியும். 1 மணி நேர இடைவெளி இருந்தால் மட்டுமே ரத்த ஓட்டம் உடல் உறுப்புகள் முழுதும் சீராக பரவும்.</p>
+              </div>
+            </div>
+
+            <div class="g-reason">
+              <span class="gr-num">2</span>
+              <div>
+                <strong>நச்சு கழிவுகள் முறையாக வெளியேறுதல்:</strong>
+                <p>சிகிச்சை முடிந்த 1 மணி நேரத்திற்குப் பின் மிதமான வெந்நீர் அருந்தும்போது உடலில் இளகிய நச்சு கழிவுகள் இயற்கையாக வெளியேறும்.</p>
+              </div>
+            </div>
+
+            <div class="g-reason">
+              <span class="gr-num">3</span>
+              <div>
+                <strong>நரம்பு செல்களின் முழுமையான தளர்வு:</strong>
+                <p>வயிறு காலியாக இருக்கும்போது பாத நரம்பு அழுத்தப் புள்ளிகள் உடலின் அனைத்து உள் உறுப்புகளையும் மிக ஆழமாக புத்துயிர் பெறச் செய்கின்றன.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery / Reference Posters Showcase Section -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🖼️ சிகிச்சை மைய சுவரொட்டிகள்</span>
+        <h2 class="section-title">நற்புவி மையத்தின் அதிகாரப்பூர்வ அறிவிப்புகள்</h2>
+        <div class="title-divider"></div>
+        <p class="section-subtitle">
+          சூரியம்பாளையம் சிகிச்சை மையத்தின் அசல் சுவரொட்டிகள் மற்றும் விளக்கப் படங்கள்
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="assets/narpuvi-center-flyer.jpg" alt="நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் - முழு சுவரொட்டி" class="gallery-img" loading="lazy">
+          <div class="gallery-card-body">
+            <h4>பாத அழுத்த புத்துணர்வு சிகிச்சை சுவரொட்டி</h4>
+            <p>கட்டணம் ரூ 200 | சிகிச்சை விளக்கங்கள் & தத்துவம்</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="assets/narpuvi-reflexology-illustration.jpg" alt="பாத அழுத்த சிகிச்சையின் நன்மைகள்" class="gallery-img" loading="lazy">
+          <div class="gallery-card-body">
+            <h4>சிகிச்சையின் 5 முக்கிய நன்மைகள்</h4>
+            <p>ரத்த ஓட்டம், மன அழுத்தம், தூக்கமின்மை, நரம்பு மண்டலம், வலி நிவாரணம்</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="assets/narpuvi-joint-pain-oil.jpg" alt="நற்புவி மூட்டுவலி நிவாரண எண்ணெய்" class="gallery-img" loading="lazy">
+          <div class="gallery-card-body">
+            <h4>மூட்டுவலி நிவாரண எண்ணெய் (விலை: ₹100)</h4>
+            <p>100% இயற்கை மூலிகை தைலம் | தசைப்பிடிப்பு, மூட்டு வலி தீர்வு</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Foot Reflexology Chart Explorer Section -->
+  <section class="section foot-chart-section" id="foot-chart">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🔍 நேரடி பரிசோதனை பலகை</span>
+        <h2 class="section-title">பாத அழுத்த புள்ளிகள் & உடல் உறுப்புகள் வரைபடம்</h2>
+        <div class="title-divider"></div>
+        <p class="section-subtitle">
+          கீழே உள்ள பாத வரைபடத்தில் ஏதேனும் ஒரு பகுதியை தொட்டுப் பாருங்கள் (Click/Tap any zone).
+        </p>
+      </div>
+
+      <!-- Quick Preset Selector Buttons -->
+      <div class="chart-preset-buttons">
+        <span class="preset-label">விரைவு தேர்வு:</span>
+        <button type="button" class="preset-btn active" data-zone="head">🧠 தலை & நரம்பு மண்டலம்</button>
+        <button type="button" class="preset-btn" data-zone="eyes">👁️ கண் & சைனஸ்</button>
+        <button type="button" class="preset-btn" data-zone="chest">🫁 நுரையீரல் & இதயம்</button>
+        <button type="button" class="preset-btn" data-zone="stomach">🥣 வயிறு & செரிமானம்</button>
+        <button type="button" class="preset-btn" data-zone="liver">🧪 கல்லீரல் & நச்சு நீக்கம்</button>
+        <button type="button" class="preset-btn" data-zone="kidney">💧 சிறுநீரகம் & கழிவு</button>
+        <button type="button" class="preset-btn" data-zone="spine">🦴 முதுகு & நரம்பு</button>
+        <button type="button" class="preset-btn" data-zone="heel">⚡ குதிகால் & உறக்கம்</button>
+      </div>
+
+      <div class="chart-display-wrapper">
+        <!-- Interactive SVG Foot Diagram -->
+        <div class="interactive-foot-canvas">
+          <div class="foot-badge-label left-badge">இடது பாதம் (Left Sole)</div>
+          <div class="foot-badge-label right-badge">வலது பாதம் (Right Sole)</div>
+
+          <svg id="reflexFootSvg" viewBox="0 0 540 600" class="reflex-svg" xmlns="http://www.w3.org/2000/svg">
+            <!-- LEFT FOOT -->
+            <g id="left-foot-group" class="foot-group">
+              <path d="M160 540 C110 540 80 500 80 430 C80 370 100 320 95 240 C90 160 110 110 145 110 C175 110 195 140 195 210 C195 290 220 350 220 440 C220 510 195 540 160 540 Z" fill="#FDFBF7" stroke="#2D5A3F" stroke-width="3"/>
+
+              <g class="interactive-zone" data-zone="head" tabindex="0" role="button" aria-label="தலை மற்றும் மூளை">
+                <path d="M145 110 C130 110 115 95 115 65 C115 35 135 25 155 25 C175 25 190 40 190 70 C190 95 170 110 145 110 Z" fill="#E8C547" class="zone-path" />
+                <text x="148" y="70" font-size="11" font-weight="bold" text-anchor="middle" fill="#1A3324">மூளை</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="eyes" tabindex="0" role="button" aria-label="கண் காது சைனஸ்">
+                <circle cx="100" cy="55" r="14" fill="#93C5FD" class="zone-path" />
+                <circle cx="80" cy="80" r="12" fill="#93C5FD" class="zone-path" />
+                <circle cx="65" cy="115" r="11" fill="#93C5FD" class="zone-path" />
+                <circle cx="55" cy="155" r="10" fill="#93C5FD" class="zone-path" />
+                <text x="75" y="95" font-size="9" font-weight="bold" fill="#1E3A8A">சைனஸ்</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="chest" tabindex="0" role="button" aria-label="நுரையீரல் மற்றும் இதயம்">
+                <path d="M90 210 C110 180 180 180 200 210 C205 240 180 260 145 260 C110 260 85 240 90 210 Z" fill="#FCA5A5" class="zone-path" />
+                <text x="145" y="225" font-size="11" font-weight="bold" text-anchor="middle" fill="#7F1D1D">நுரையீரல் / இதயம்</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="stomach" tabindex="0" role="button" aria-label="வயிறு மற்றும் செரிமானம்">
+                <path d="M95 265 C130 265 170 265 195 265 C200 310 180 340 145 340 C110 340 95 305 95 265 Z" fill="#FDE047" class="zone-path" />
+                <text x="145" y="305" font-size="11" font-weight="bold" text-anchor="middle" fill="#713F12">வயிறு / கணையம்</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="spine" tabindex="0" role="button" aria-label="முதுகுத்தண்டு">
+                <path d="M175 220 C190 220 210 270 210 380 C210 440 185 450 175 440 C185 370 185 290 175 220 Z" fill="#C4B5FD" class="zone-path" />
+                <text x="195" y="335" font-size="10" font-weight="bold" text-anchor="middle" fill="#4C1D95" transform="rotate(75, 195, 335)">முதுகுத்தண்டு</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="kidney" tabindex="0" role="button" aria-label="சிறுநீரகம்">
+                <circle cx="135" cy="365" r="18" fill="#6EE7B7" class="zone-path" />
+                <text x="135" y="370" font-size="10" font-weight="bold" text-anchor="middle" fill="#064E3B">சிறுநீரகம்</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="heel" tabindex="0" role="button" aria-label="குதிகால் மற்றும் தூக்கம்">
+                <path d="M110 460 C135 455 170 455 195 460 C205 490 195 530 155 530 C120 530 105 495 110 460 Z" fill="#F472B6" class="zone-path" />
+                <text x="155" y="495" font-size="11" font-weight="bold" text-anchor="middle" fill="#831843">குதிகால் / தூக்கம்</text>
+              </g>
+            </g>
+
+            <!-- RIGHT FOOT -->
+            <g id="right-foot-group" class="foot-group">
+              <path d="M380 540 C430 540 460 500 460 430 C460 370 440 320 445 240 C450 160 430 110 395 110 C365 110 345 140 345 210 C345 290 320 350 320 440 C320 510 345 540 380 540 Z" fill="#FDFBF7" stroke="#2D5A3F" stroke-width="3"/>
+
+              <g class="interactive-zone" data-zone="head" tabindex="0" role="button" aria-label="தலை மற்றும் மூளை வலது பாதம்">
+                <path d="M395 110 C410 110 425 95 425 65 C425 35 405 25 385 25 C365 25 350 40 350 70 C350 95 370 110 395 110 Z" fill="#E8C547" class="zone-path" />
+                <text x="392" y="70" font-size="11" font-weight="bold" text-anchor="middle" fill="#1A3324">மூளை</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="eyes" tabindex="0" role="button" aria-label="கண் காது சைனஸ் வலது பாதம்">
+                <circle cx="440" cy="55" r="14" fill="#93C5FD" class="zone-path" />
+                <circle cx="460" cy="80" r="12" fill="#93C5FD" class="zone-path" />
+                <circle cx="475" cy="115" r="11" fill="#93C5FD" class="zone-path" />
+                <circle cx="485" cy="155" r="10" fill="#93C5FD" class="zone-path" />
+                <text x="450" y="95" font-size="9" font-weight="bold" fill="#1E3A8A">சைனஸ்</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="chest" tabindex="0" role="button" aria-label="நுரையீரல் வலது பாதம்">
+                <path d="M450 210 C430 180 360 180 340 210 C335 240 360 260 395 260 C430 260 455 240 450 210 Z" fill="#FCA5A5" class="zone-path" />
+                <text x="395" y="225" font-size="11" font-weight="bold" text-anchor="middle" fill="#7F1D1D">நுரையீரல்</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="liver" tabindex="0" role="button" aria-label="கல்லீரல் மற்றும் பித்தப்பை">
+                <path d="M445 265 C410 265 370 265 345 265 C340 310 360 340 395 340 C430 340 445 305 445 265 Z" fill="#86EFAC" class="zone-path" />
+                <text x="395" y="305" font-size="11" font-weight="bold" text-anchor="middle" fill="#14532D">கல்லீரல் / பித்தப்பை</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="spine" tabindex="0" role="button" aria-label="முதுகுத்தண்டு வலது பாதம்">
+                <path d="M365 220 C350 220 330 270 330 380 C330 440 355 450 365 440 C355 370 355 290 365 220 Z" fill="#C4B5FD" class="zone-path" />
+                <text x="345" y="335" font-size="10" font-weight="bold" text-anchor="middle" fill="#4C1D95" transform="rotate(-75, 345, 335)">முதுகுத்தண்டு</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="kidney" tabindex="0" role="button" aria-label="சிறுநீரகம் வலது பாதம்">
+                <circle cx="405" cy="365" r="18" fill="#6EE7B7" class="zone-path" />
+                <text x="405" y="370" font-size="10" font-weight="bold" text-anchor="middle" fill="#064E3B">சிறுநீரகம்</text>
+              </g>
+
+              <g class="interactive-zone" data-zone="heel" tabindex="0" role="button" aria-label="குதிகால் வலி வலது பாதம்">
+                <path d="M430 460 C405 455 370 455 345 460 C335 490 345 530 385 530 C420 530 435 495 430 460 Z" fill="#F472B6" class="zone-path" />
+                <text x="385" y="495" font-size="11" font-weight="bold" text-anchor="middle" fill="#831843">குதிகால் / தூக்கம்</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Dynamic Info Panel beside Foot Diagram -->
+        <div class="chart-info-panel" id="chartInfoCard">
+          <div class="info-card-header">
+            <span class="info-badge" id="infoBadge">🧠 மண்டலம்: தலை & மூளை</span>
+            <span class="info-zone-name-en" id="infoZoneNameEn">Head, Brain & Nervous System</span>
+          </div>
+          
+          <h3 class="info-title" id="infoTitle">தலைவலி, ஒற்றைத் தலைவலி & மன அழுத்தம் தீர்வு</h3>
+          
+          <p class="info-desc" id="infoDesc">
+            பெருவிரலின் உச்சிப் பகுதி மூளையின் பிட்யூட்டரி மற்றும் பீனியல் சுரப்பிகளுடன் இணைகிறது. இந்த புள்ளியில் Er. E. நல்லசிவம் M.E., அவர்களின் வழிமுறையில் அக்குபிரஷர் கொடுக்கும்போது மூளைக்கு செல்லும் இரத்த ஓட்டம் அதிகரித்து, நாள்பட்ட தலைவலி, படபடப்பு மற்றும் மன உளைச்சல் உடனே தணிகிறது.
+          </p>
+
+          <div class="info-benefits-box">
+            <h4>🌿 பலன்கள்:</h4>
+            <ul id="infoBenefitsList">
+              <li>நரம்பு மண்டலம் சீரடைந்து மன அமைதி உண்டாகுதல்</li>
+              <li>நாள்பட்ட மன அழுத்தம் & தூக்கமின்மை நீங்குதல்</li>
+              <li>இரத்த ஓட்டம் சீராகி சோர்வு அகலுதல்</li>
+              <li>முழு உடல் புத்துணர்ச்சி</li>
+            </ul>
+          </div>
+
+          <button type="button" class="btn btn-whatsapp btn-block" onclick="openBookingModal()">
+            <span>இந்த சிகிச்சைக்காக WhatsApp-ல் முன்பதிவு செய்க</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Contact Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">📍 எங்களை வந்தடைய</span>
+        <h2 class="section-title">தொடர்பு & முகவரி விவரங்கள்</h2>
+        <div class="title-divider"></div>
+        <p class="section-subtitle">
+          சூரியம்பாளையத்தில் உங்கள் புத்துணர்வு இல்லம் - Er. E. நல்லசிவம் M.E., Reflexologist
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Cards -->
+        <div class="contact-info-cards">
+          <div class="c-info-card highlight-border">
+            <div class="c-icon">🏥</div>
+            <div class="c-details">
+              <h4>மையத்தின் பெயர்:</h4>
+              <p>
+                <strong>நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</strong><br>
+                (Foot Reflexology Rejuvenation Therapy Center)<br>
+                சிகிச்சை நிபுணர்: <strong>Er. E. நல்லசிவம் M.E., Reflexologist</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="c-info-card">
+            <div class="c-icon">📍</div>
+            <div class="c-details">
+              <h4>சிகிச்சை மைய முகவரி:</h4>
+              <p>
+                <strong>குயிலங்காடு தோட்டம், சூரியம்பாளையம்</strong><br>
+                கவுந்தப்பாடி to கோபி மெயின் ரோடு,<br>
+                ஈரோடு மாவட்டம், தமிழ்நாடு - 638452.
+              </p>
+              <a href="https://www.google.com/maps/place/%E0%AE%A8%E0%AE%B1%E0%AF%8D%E0%AE%AA%E0%AF%81%E0%AE%B5%E0%AE%BF+%E0%AE%AA%E0%AE%BE%E0%AE%A4+%E0%AE%85%E0%AE%B4%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4+%E0%AE%AA%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%A3%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%81+%E0%AE%9A%E0%AE%BF%E0%AE%95%E0%AE%BF%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AF%88+%E0%AE%AE%E0%AF%88%E0%AE%AF%E0%AE%AE%E0%AF%8D(+Narpuvi+Foot+Reflexology+Rejuvenation+Therpy+Center),+gobi/@11.4458001,77.5202291,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba93f5aff4ac153:0x7aeff8450a845d1c!8m2!3d11.4458001!4d77.5202291!16s%2Fg%2F11ynps0zc2!18m1!1e1" target="_blank" rel="noopener noreferrer" class="map-link-inline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>கூகுள் மேப்பில் நற்புவி மையத்தை காண்க (Google Maps)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="c-info-card">
+            <div class="c-icon">📞</div>
+            <div class="c-details">
+              <h4>தொலைபேசி தொடர்பு:</h4>
+              <p>
+                <a href="tel:+919791406655" class="phone-link">97914 06655</a>
+              </p>
+              <span class="contact-subtext">காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை</span>
+            </div>
+          </div>
+
+          <div class="c-info-card">
+            <div class="c-icon">🕒</div>
+            <div class="c-details">
+              <h4>சிகிச்சை நேரங்கள்:</h4>
+              <p>
+                <strong>காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை</strong><br>
+                (முன்பதிவு: WhatsApp மூலம்)
+              </p>
+            </div>
+          </div>
+
+          <div class="c-info-card">
+            <div class="c-icon">💰</div>
+            <div class="c-details">
+              <h4>சிகிச்சை கட்டணம் & எண்ணெய் விலை:</h4>
+              <p>
+                <strong>பாத சிகிச்சை கட்டணம்: ரூ 200</strong> (30 / 45 / 60 நிமிடங்கள்)<br>
+                <strong>மூட்டுவலி நிவாரண எண்ணெய்: ரூ 100</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="c-info-card">
+            <div class="c-icon">💬</div>
+            <div class="c-details">
+              <h4>WhatsApp நேரடி முன்பதிவு:</h4>
+              <p>
+                <a href="https://wa.me/919791406655?text=வணக்கம்%20Er.%20E.%20நல்லசிவம்%20அவர்களே,%20பாத%20அழுத்த%20புத்துணர்வு%20சிகிச்சை%20மையத்தில்%20முன்பதிவு%20செய்ய%20விரும்புகிறேன்." target="_blank" rel="noopener noreferrer" class="whatsapp-link-btn">
+                  <span>WhatsApp-ல் பேச இங்கே தொடவும் (97914 06655)</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Map Embed & Quick Contact Card -->
+        <div class="map-card-wrapper">
+          <div class="map-header-badge">
+            <span class="m-badge-dot"></span>
+            <strong>நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</strong>
+          </div>
+          <div class="map-frame-box">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.8711445778844!2d77.5202291!3d11.4458001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba93f5aff4ac153%3A0x7aeff8450a845d1c!2sNarpuvi%20Foot%20Reflexology%20Rejuvenation%20Therapy%20Center!5e0!3m2!1sen!2sin!4v1713500000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius: 14px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் - சூரியம்பாளையம்">
+            </iframe>
+          </div>
+          <div class="map-quick-btn-row">
+            <a href="https://www.google.com/maps/place/%E0%AE%A8%E0%AE%B1%E0%AF%8D%E0%AE%AA%E0%AF%81%E0%AE%B5%E0%AE%BF+%E0%AE%AA%E0%AE%BE%E0%AE%A4+%E0%AE%85%E0%AE%B4%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4+%E0%AE%AA%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%A3%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%81+%E0%AE%9A%E0%AE%BF%E0%AE%95%E0%AE%BF%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AF%88+%E0%AE%AE%E0%AF%88%E0%AE%AF%E0%AE%AE%E0%AF%8D(+Narpuvi+Foot+Reflexology+Rejuvenation+Therpy+Center),+gobi/@11.4458001,77.5202291,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba93f5aff4ac153:0x7aeff8450a845d1c!8m2!3d11.4458001!4d77.5202291!16s%2Fg%2F11ynps0zc2!18m1!1e1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>கூகுள் மேப்பில் வழிகாட்டல் பெற (Get Directions)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Appointment Booking Modal Dialog -->
+  <dialog id="bookingDialog" class="booking-dialog" aria-labelledby="dialogTitle">
+    <div class="dialog-content">
+      <button type="button" class="dialog-close" onclick="closeBookingModal()" aria-label="மூடுக">✕</button>
+      
+      <div class="dialog-header">
+        <span class="dialog-badge">🌿 WhatsApp உடனடி முன்பதிவு</span>
+        <h3 id="dialogTitle">நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை</h3>
+        <p>Er. E. நல்லசிவம் M.E., Reflexologist | கட்டணம்: ரூ 200</p>
+      </div>
+
+      <!-- Essential Guideline Box inside Dialog -->
+      <div class="modal-notice-box">
+        <span class="notice-icon">⚠️</span>
+        <div>
+          <strong>முன்பதிவு குறிப்பு:</strong>
+          <p>சிகிச்சைக்கு <strong>1 மணி நேரத்திற்கு முன்பும் பின்பும்</strong> உணவு மற்றும் தண்ணீர் அருந்தக்கூடாது.</p>
+        </div>
+      </div>
+
+      <form id="appointmentForm" onsubmit="submitAppointmentForm(event)">
+        <div class="form-group">
+          <label for="clientName">உங்கள் பெயர் (Full Name) *</label>
+          <input type="text" id="clientName" name="name" required placeholder="எ.கா: சுப்பிரமணியன்" class="form-control">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientPhone">WhatsApp மொபைல் எண் *</label>
+            <input type="tel" id="clientPhone" name="phone" required placeholder="எ.கா: 97914 06655" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="clientPlace">ஊர் / பகுதி (City / Area) *</label>
+            <input type="text" id="clientPlace" name="place" placeholder="எ.கா: சூரியம்பாளையம் / கோபி / கவுந்தப்பாடி" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="preferredDate">தேதி (Date) *</label>
+            <input type="date" id="preferredDate" name="date" required class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="preferredTime">நேரம் (காலை 7.00 - மதியம் 12.00) *</label>
+            <select id="preferredTime" name="time" required class="form-control">
+              <option value="">நேரத்தை தேர்வு செய்க</option>
+              <option value="காலை 07:00 - 08:00">காலை 07:00 - 08:00</option>
+              <option value="காலை 08:00 - 09:00">காலை 08:00 - 09:00</option>
+              <option value="காலை 09:00 - 10:00">காலை 09:00 - 10:00</option>
+              <option value="காலை 10:00 - 11:00">காலை 10:00 - 11:00</option>
+              <option value="காலை 11:00 - 12:00">காலை 11:00 - 12:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="durationSelection">சிகிச்சை அல்லது தயாரிப்பு தேர்வு *</label>
+          <select id="durationSelection" name="duration" required class="form-control">
+            <option value="பாத அழுத்த சிகிச்சை - 45 நிமிடங்கள் (ரூ 200)" selected>பாத அழுத்த சிகிச்சை - 45 நிமிடங்கள் (ரூ 200)</option>
+            <option value="பாத அழுத்த சிகிச்சை - 30 நிமிடங்கள் (ரூ 200)">பாத அழுத்த சிகிச்சை - 30 நிமிடங்கள் (ரூ 200)</option>
+            <option value="பாத அழுத்த சிகிச்சை - 60 நிமிடங்கள் (ரூ 200)">பாத அழுத்த சிகிச்சை - 60 நிமிடங்கள் (ரூ 200)</option>
+            <option value="நற்புவி மூட்டுவலி நிவாரண எண்ணெய் (விலை: ₹100)">நற்புவி மூட்டுவலி நிவாரண எண்ணெய் (விலை: ₹100)</option>
+            <option value="சிகிச்சை + மூட்டுவலி எண்ணெய் (ரூ 200 + ரூ 100)">சிகிச்சை + மூட்டுவலி எண்ணெய் (ரூ 200 + ரூ 100)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="healthConcern">உடல் உபாதை / குறிப்பு (Problems / Concerns)</label>
+          <textarea id="healthConcern" name="concern" rows="2" placeholder="எ.கா: மூட்டு வலி / நரம்பு தளர்ச்சி / தூக்கமின்மை / மன அழுத்தம்" class="form-control"></textarea>
+        </div>
+
+        <div class="form-fee-strip">
+          <span>சிகிச்சை கட்டணம்: <strong>ரூ 200</strong> | மூட்டுவலி எண்ணெய்: <strong>ரூ 100</strong></span>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp btn-block btn-large">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/></svg>
+          <span>வாட்ஸ்அப் மூலம் உடனடியாக முன்பதிவு செய்ய</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Booking Success Modal -->
+  <dialog id="successDialog" class="booking-dialog" aria-labelledby="successTitle">
+    <div class="dialog-content text-center">
+      <div class="success-icon">🎉</div>
+      <h3 id="successTitle">வாட்ஸ்அப் முன்பதிவு தயாராக உள்ளது!</h3>
+      <p id="successMessage">உங்கள் முன்பதிவு விவரங்கள் வாட்ஸ்அப் செயலிக்கு அனுப்பப்பட்டுள்ளன. Er. E. நல்லசிவம் M.E., Reflexologist உங்களின் நேர ஒதுக்கீட்டை உறுதி செய்வார்.</p>
+      <div class="booking-summary-box" id="bookingSummaryDetails"></div>
+      <button type="button" class="btn btn-primary" onclick="closeSuccessModal()">சரி (Close)</button>
+    </div>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <span class="f-logo-icon">🌿</span>
+          <span class="f-brand-name">நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம்</span>
+        </div>
+        <p class="specialist-footer-tag">Er. E. நல்லசிவம் M.E., Reflexologist</p>
+        <p class="footer-motto-quote">“நாமும் வாழ்ந்து நம் சமூகத்தையும் வாழ வைப்போம்.”</p>
+        <div class="footer-contact-mini">
+          <p><a href="https://www.google.com/maps/place/%E0%AE%A8%E0%AE%B1%E0%AF%8D%E0%AE%AA%E0%AF%81%E0%AE%B5%E0%AE%BF+%E0%AE%AA%E0%AE%BE%E0%AE%A4+%E0%AE%85%E0%AE%B4%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4+%E0%AE%AA%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%A3%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%81+%E0%AE%9A%E0%AE%BF%E0%AE%95%E0%AE%BF%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AF%88+%E0%AE%AE%E0%AF%88%E0%AE%AF%E0%AE%AE%E0%AF%8D(+Narpuvi+Foot+Reflexology+Rejuvenation+Therpy+Center),+gobi/@11.4458001,77.5202291,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba93f5aff4ac153:0x7aeff8450a845d1c!8m2!3d11.4458001!4d77.5202291!16s%2Fg%2F11ynps0zc2!18m1!1e1" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">📍 குயிலங்காடு தோட்டம், சூரியம்பாளையம் (Google Maps ↗)</a></p>
+          <p>🛣️ கவுந்தப்பாடி to கோபி மெயின் ரோடு</p>
+          <p>📞 செல்: <a href="tel:+919791406655" style="color: #FFFFFF; font-weight: 700;">97914 06655</a></p>
+          <p>🕒 காலை 7.00 மணி முதல் மதியம் 12.00 மணி வரை</p>
+          <p>💰 சிகிச்சை கட்டணம்: ரூ 200 | எண்ணெய்: ரூ 100</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>முக்கிய நன்மைகள்</h4>
+        <ul class="footer-links">
+          <li><a>🫀 இரத்த ஓட்டத்தை மேம்படுத்துகிறது</a></li>
+          <li><a>🧘 மன அழுத்தத்தைக் குறைக்கிறது</a></li>
+          <li><a>🌙 தூக்கமின்மையைக் குணப்படுத்துகிறது</a></li>
+          <li><a>💪 நரம்பு மண்டலத்தை வலுப்படுத்துகிறது</a></li>
+          <li><a>😌 வலிகளில் இருந்து நிவாரணம்</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>இயற்கை தயாரிப்பு</h4>
+        <ul class="footer-links">
+          <li><strong>|| இயற்கை அமுதம் ||</strong></li>
+          <li><a>நற்புவி மூட்டுவலி நிவாரண எண்ணெய்</a></li>
+          <li><a>விலை: ₹100 மட்டும்</a></li>
+          <li><a>மூட்டு வலி, முழங்கால் வலி குணமாக்கும்</a></li>
+          <li><a>100% இயற்கை மூலிகை தைலம்</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>முக்கிய குறிப்பு</h4>
+        <div class="footer-guideline-box">
+          <p>⚠️ சிகிச்சைக்கு 1 மணி நேரத்திற்கு முன்பும் பின்பும் உணவு, தண்ணீர் அருந்தக்கூடாது.</p>
+          <button type="button" class="btn btn-whatsapp btn-block" onclick="openBookingModal()">WhatsApp முன்பதிவு</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>© 2026 நற்புவி பாத அழுத்த புத்துணர்வு சிகிச்சை மையம் | Er. E. நல்லசிவம் M.E., Reflexologist.</p>
+        <p class="disclaimer">குயிலங்காடு தோட்டம், சூரியம்பாளையம் | கவுந்தப்பாடி to கோபி மெயின் ரோடு | 📞 97914 06655</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile Quick Action Bar -->
+  <div class="floating-mobile-bar" aria-label="விரைவு தொடர்பு பட்டை">
+    <a href="tel:+919791406655" class="float-btn float-call" aria-label="அழைக்க">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span>அழைக்க</span>
+    </a>
+    
+    <button type="button" class="float-btn float-book" onclick="openBookingModal()">
+      <span class="float-price-badge">ரூ 200</span>
+      <span>முன்பதிவு</span>
+    </button>
+
+    <a href="#oil-product" class="float-btn float-oil" aria-label="எண்ணெய்">
+      <span class="float-oil-badge">₹100</span>
+      <span>எண்ணெய்</span>
+    </a>
+
+    <a href="https://wa.me/919791406655?text=வணக்கம்%20Er.%20E.%20நல்லசிவம்%20அவர்களே,%20பாத%20அழுத்த%20புத்துணர்வு%20சிகிச்சை%20மையத்தில்%20முன்பதிவு%20செய்ய%20விரும்புகிறேன்." target="_blank" rel="noopener noreferrer" class="float-btn float-wa" aria-label="WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/></svg>
+      <span>WhatsApp</span>
+    </a>
   </div>
 
-  <script>
-    // Reveal animation for gallery + fallback
-    (function(){
-      const items = document.querySelectorAll(".ph");
-      if ("IntersectionObserver" in window) {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add("show");
-          });
-        }, { threshold: 0.15 });
-        items.forEach((el) => io.observe(el));
-      } else {
-        items.forEach((el) => el.classList.add("show"));
-      }
-    })();
-  </script>
-
-  <script>
-    // Auto-rotating testimonials (dots + arrows + swipe)
-    (function(){
-      const track = document.getElementById("tTrack");
-      const carousel = document.getElementById("tCarousel");
-      const dotsWrap = document.getElementById("tDots");
-      const prevBtn = document.getElementById("tPrev");
-      const nextBtn = document.getElementById("tNext");
-      if (!track || !carousel || !dotsWrap || !prevBtn || !nextBtn) return;
-
-      const slides = Array.from(track.children);
-      let index = 0;
-      let timer = null;
-      const intervalMs = 3500;
-
-      slides.forEach((_, i) => {
-        const d = document.createElement("button");
-        d.type = "button";
-        d.className = "tDot" + (i === 0 ? " active" : "");
-        d.addEventListener("click", () => goTo(i));
-        dotsWrap.appendChild(d);
-      });
-
-      const dots = Array.from(dotsWrap.children);
-
-      function update(){
-        track.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach((d, i) => d.classList.toggle("active", i === index));
-      }
-      function goTo(i){
-        index = (i + slides.length) % slides.length;
-        update();
-        restart();
-      }
-      function next(){ goTo(index + 1); }
-      function prev(){ goTo(index - 1); }
-
-      function start(){ stop(); timer = setInterval(next, intervalMs); }
-      function stop(){ if (timer) clearInterval(timer); timer = null; }
-      function restart(){ start(); }
-
-      nextBtn.addEventListener("click", next);
-      prevBtn.addEventListener("click", prev);
-
-      carousel.addEventListener("mouseenter", stop);
-      carousel.addEventListener("mouseleave", start);
-      carousel.addEventListener("touchstart", stop, {passive:true});
-      carousel.addEventListener("touchend", start, {passive:true});
-
-      let x0 = null;
-      carousel.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, {passive:true});
-      carousel.addEventListener("touchmove", (e) => {
-        if (x0 === null) return;
-        const dx = e.touches[0].clientX - x0;
-        if (Math.abs(dx) > 40){
-          dx < 0 ? next() : prev();
-          x0 = null;
-        }
-      }, {passive:true});
-      carousel.addEventListener("touchend", () => { x0 = null; }, {passive:true});
-
-      update();
-      start();
-    })();
-  </script>
-
-  <script>
-    // Treatment details modal (Title comes from data-title)
-    (function(){
-      const modal = document.getElementById("tModal");
-      const mImg  = document.getElementById("mImg");
-      const mTitle= document.getElementById("mTitle");
-      const mSub  = document.getElementById("mSub");
-      const mList = document.getElementById("mList");
-      const mClose= document.getElementById("mClose");
-      const mBook = document.getElementById("mBook");
-      if (!modal || !mImg || !mTitle || !mSub || !mList || !mClose || !mBook) return;
-
-      let lastFocus = null;
-
-      function openModal(btn){
-        lastFocus = document.activeElement;
-
-        const title  = btn.dataset.title || "Details";
-        const sub    = btn.dataset.sub || "";
-        const img    = btn.dataset.img || "";
-        const points = (btn.dataset.points || "").split("|").map(s => s.trim()).filter(Boolean);
-
-        mTitle.textContent = title;       // ✅ Title
-        mSub.textContent = sub;
-        mImg.src = img;
-
-        mList.innerHTML = "";
-        points.forEach(p => {
-          const li = document.createElement("li");
-          li.textContent = p;
-          mList.appendChild(li);
-        });
-
-        // Optional: prefill WhatsApp message with title
-        const msg = encodeURIComponent(`வணக்கம்! "${title}" சிகிச்சை குறித்து தகவல் வேண்டும் / முன்பதிவு செய்ய வேண்டும்.`);
-        mBook.href = `https://wa.me/919791406655?text=${msg}`;
-
-        modal.classList.add("show");
-        modal.setAttribute("aria-hidden", "false");
-        mClose.focus();
-      }
-
-      function closeModal(){
-        modal.classList.remove("show");
-        modal.setAttribute("aria-hidden", "true");
-        mImg.src = "";
-        if (lastFocus) lastFocus.focus();
-      }
-
-      document.addEventListener("click", (e) => {
-        const btn = e.target.closest(".phBtn");
-        if (btn) openModal(btn);
-      });
-
-      mClose.addEventListener("click", closeModal);
-      modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
-      });
-    })();
-  </script>
+  <!-- JavaScript Script -->
+  <script src="script.js"></script>
 </body>
 </html>
